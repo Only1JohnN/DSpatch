@@ -1,7 +1,18 @@
 import React from "react";
 
 // Material imports
-import { Box, Container, Link, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Chip,
+  Container,
+  Link,
+  Stack,
+  Typography,
+  Card,
+  Avatar,
+  Rating,
+  CardContent,
+} from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { ThemeProvider } from "@mui/material/styles";
 
@@ -113,9 +124,138 @@ const Landing = () => {
           </Box>
         </Box>
 
+        {/* SERVICES */}
         <Container
           sx={{
             my: 10,
+          }}
+        >
+          <Stack direction={{ md: "row" }} spacing={{ xs: 6, md: 12 }}>
+            <Grid container direction={{ xs: "row", md: "column" }}>
+              <Grid
+                xs={4}
+                md='auto'
+                mb={{ md: 4 }}
+                display='flex'
+                justifyContent='center'
+                alignItems='center'
+              >
+                <Box
+                  className={classes.placeholders}
+                  sx={{
+                    height: { xs: "80px", md: "150px" },
+                    width: { xs: "80px", md: "150px" },
+                    marginRight: { xs: 2, md: 0 },
+                    borderRadius: "100%",
+                  }}
+                ></Box>
+              </Grid>
+
+              <Grid
+                xs
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  textAlign: { md: "center" },
+                }}
+              >
+                <Typography variant='h5' fontSize={{ xs: 20, md: 24 }} fontWeight={600} mb={1}>
+                  Find a Ride
+                </Typography>
+                <Typography variant='subtitle1' fontSize={{ xs: 14, md: 16 }} lineHeight={1.5}>
+                  DSpatch offers you ride for your packages in few minutes.
+                </Typography>
+              </Grid>
+            </Grid>
+
+            <Grid container direction={{ xs: "row", md: "column" }}>
+              <Grid
+                xs={4}
+                md='auto'
+                mb={{ md: 4 }}
+                display='flex'
+                justifyContent='center'
+                alignItems='center'
+              >
+                <Box
+                  className={classes.placeholders}
+                  sx={{
+                    height: { xs: "80px", md: "150px" },
+                    width: { xs: "80px", md: "150px" },
+                    marginRight: { xs: 2, md: 0 },
+                    borderRadius: "100%",
+                  }}
+                ></Box>
+              </Grid>
+
+              <Grid
+                xs
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  textAlign: { md: "center" },
+                }}
+              >
+                <Typography variant='h5' fontSize={{ xs: 20, md: 24 }} fontWeight={600} mb={1}>
+                  Great Prices
+                </Typography>
+                <Typography variant='subtitle1' fontSize={{ xs: 14, md: 16 }} lineHeight={1.5}>
+                  The finest ride rates in every city are what we strive to provide. Come and have a
+                  look!
+                </Typography>
+              </Grid>
+            </Grid>
+
+            <Grid container direction={{ xs: "row", md: "column" }}>
+              <Grid
+                xs={4}
+                md='auto'
+                mb={{ md: 4 }}
+                display='flex'
+                justifyContent='center'
+                alignItems='center'
+              >
+                <Box
+                  className={classes.placeholders}
+                  sx={{
+                    height: { xs: "80px", md: "150px" },
+                    width: { xs: "80px", md: "150px" },
+                    marginRight: { xs: 2, md: 0 },
+                    borderRadius: "100%",
+                  }}
+                ></Box>
+              </Grid>
+
+              <Grid
+                xs
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  textAlign: { md: "center" },
+                }}
+              >
+                <Typography variant='h5' fontSize={{ xs: 20, md: 24 }} fontWeight={600} mb={1}>
+                  Easy to use
+                </Typography>
+                <Typography variant='subtitle1' fontSize={{ xs: 14, md: 16 }} lineHeight={1.5}>
+                  Deliver your packages as soon as you can to the desired location.
+                </Typography>
+              </Grid>
+            </Grid>
+          </Stack>
+        </Container>
+
+        <Container
+          sx={{
+            my: 5,
+            py: 10,
+
+            [theme.breakpoints.down("sm")]: {
+              backgroundColor: "#FAFAFA",
+            },
           }}
         >
           <Stack spacing={12}>
@@ -144,6 +284,8 @@ const Landing = () => {
                     height: { xs: "214px", md: "380px" },
                     borderBottomRightRadius: { xs: "30px", md: "50px" },
                     borderBottomLeftRadius: { xs: "30px", md: "50px" },
+                    borderTopRightRadius: { xs: "6px", md: "10px" },
+                    borderTopLeftRadius: { xs: "6px", md: "10px" },
                   }}
                 >
                   POTENTIAL DSpatcher's PICTURE(kjds)
@@ -163,6 +305,8 @@ const Landing = () => {
                     height: { xs: "214px", md: "380px" },
                     borderBottomRightRadius: { xs: "30px", md: "50px" },
                     borderBottomLeftRadius: { xs: "30px", md: "50px" },
+                    borderTopRightRadius: { xs: "6px", md: "10px" },
+                    borderTopLeftRadius: { xs: "6px", md: "10px" },
                   }}
                 >
                   POTENTIAL DSpatcher's PICTURE(kjds)
@@ -231,12 +375,116 @@ const Landing = () => {
                     height: { xs: "214px", md: "380px" },
                     borderBottomRightRadius: { xs: "30px", md: "50px" },
                     borderBottomLeftRadius: { xs: "30px", md: "50px" },
+                    borderTopRightRadius: { xs: "6px", md: "10px" },
+                    borderTopLeftRadius: { xs: "6px", md: "10px" },
                   }}
                 >
                   POTENTIAL DSpatcher's PICTURE(kjds)
                 </Box>
               </Grid>
             </Grid>
+          </Stack>
+        </Container>
+
+        {/* TESTIMONIALS */}
+        <Container
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            my: 10,
+          }}
+        >
+          <Chip label='Testimonials' sx={{ fontWeight: "700", textTransform: "uppercase" }} />
+          <Typography
+            variant='h4'
+            fontWeight={600}
+            fontSize={{ xs: 24, md: 32 }}
+            textAlign='center'
+          >
+            Every user has a story to tell.
+          </Typography>
+          <Typography variant='subtitle1' fontSize={{ xs: 14, md: 16 }} textAlign='center'>
+            See how Dspatch changed people's perspectives about their finances and themselves.
+          </Typography>
+
+          <Stack spacing={8} direction={{ xs: "column", md: "row" }} my={{ xs: 2, md: 4 }}>
+            <Card elevation={6}>
+              <CardContent>
+                <Rating name='Costumer rating' value={5} readOnly />
+
+                <Typography variant='subtitle2' my={5}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia id accusantium
+                  doloribus tenetur velit, facere recusandae et, repellat in consequuntur aliquid
+                  inventore voluptates veritatis rem.
+                </Typography>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                  }}
+                >
+                  <Avatar alt='Customer' src='/' />
+                  <Box sx={{ ml: 2 }}>
+                    <Typography variant='subtitle1' fontWeight={600} lineHeight='22px'>
+                      Adeniyi John
+                    </Typography>
+                    <Typography variant='caption'>Founder of E-Genta</Typography>
+                  </Box>
+                </Box>
+              </CardContent>
+            </Card>
+            <Card elevation={6}>
+              <CardContent>
+                <Rating name='Costumer rating' precision={0.5} value={4.5} readOnly />
+
+                <Typography variant='subtitle2' my={5}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia id accusantium
+                  doloribus tenetur velit, facere recusandae et, repellat in consequuntur aliquid
+                  inventore voluptates veritatis rem.
+                </Typography>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                  }}
+                >
+                  <Avatar alt='Y' src='/' />
+                  <Box sx={{ ml: 2 }}>
+                    <Typography variant='subtitle1' fontWeight={600} lineHeight='22px'>
+                      Yemi Skujyl
+                    </Typography>
+                    <Typography variant='caption'>Deputy Director at CBC</Typography>
+                  </Box>
+                </Box>
+              </CardContent>
+            </Card>
+            <Card elevation={6}>
+              <CardContent>
+                <Rating name='Costumer rating' value={4} readOnly />
+
+                <Typography variant='subtitle2' my={5}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia id accusantium
+                  doloribus tenetur velit, facere recusandae et, repellat in consequuntur aliquid
+                  inventore voluptates veritatis rem.
+                </Typography>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                  }}
+                >
+                  <Avatar alt='N' src='/' />
+                  <Box sx={{ ml: 2 }}>
+                    <Typography variant='subtitle1' fontWeight={600} lineHeight='22px'>
+                      Naijablog
+                    </Typography>
+                    <Typography variant='caption'>@naijablog9ja</Typography>
+                  </Box>
+                </Box>
+              </CardContent>
+            </Card>
           </Stack>
         </Container>
 
