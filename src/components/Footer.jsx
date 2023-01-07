@@ -154,7 +154,6 @@ const Footer = () => {
       </Container>
     </Box>
   );
-  return <div>Footers</div>;
 };
 
 export default Footer;
