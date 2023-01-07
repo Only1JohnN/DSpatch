@@ -6,7 +6,7 @@ import {
   twitterIcon,
   inIcon,
   tikTokIcon,
-} from "../assets/index";
+} from "../../assets/index";
 
 import Grid from "@mui/material/Unstable_Grid2";
 

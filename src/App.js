@@ -1,11 +1,15 @@
+import { useLocation } from "react-router-dom";
+
 import { Navbar, Footer } from "./components";
-import { LandingPage } from "./pages";
+import Routes from "./Routes";
 
 function App() {
+  const location = useLocation();
+
   return (
     <div className='App'>
       <Navbar />
-      <LandingPage />
+      <Routes location={location} />
       <Footer />
     </div>
   );
