@@ -1,6 +1,6 @@
-import TermsHeader from "./TermsHeader";
-import TermsBody from "./TermsBody";
-import "./terms.css";
+import { Link } from "react-router-dom";
+import { Button } from "../../components";
+import "./styles.css";
 
 const Terms = () => {
   const terms = [
@@ -359,10 +359,66 @@ const Terms = () => {
     },
   ];
 
+  const Signup = () => {
+    return (
+      <div className='p-4 d-none d-sm-block signup--box'>
+        <p>Find support for your bookings, account and other issues</p>
+        <div className='text-center signup--btn'>
+          <Button className='bttn'>
+            <Link href='/'>Log in or Sign up</Link>
+          </Button>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div>
-      <TermsHeader terms={terms} />
-      <TermsBody terms={terms} />
+      <div className='terms--title'>
+        <h6>LEGAL AGREEMENT</h6>
+        <h1>TERMS & CONDITIONS</h1>
+        <h6>Last Updated: January 10, 2023</h6>
+      </div>
+
+      {/* Table of content */}
+      <div className='container d-flex justify-content-between'>
+        <div>
+          <h2 className='mb-4'>TABLE OF CONTENT</h2>
+          {terms.map((list) => (
+            <div className='terms--list' key={list.id}>
+              <li>{list.title}</li>
+            </div>
+          ))}
+        </div>
+        <Signup />
+      </div>
+
+      <div className='container terms--content'>
+        <div>
+          {terms.map((ls) => (
+            <div className='mb-5' key={ls.id}>
+              <h2 className='text-uppercase mb-3'>{ls.title}</h2>
+              <h3>{ls.subtitle1}</h3>
+              <p>{ls.subtext1}</p>
+              <h3>{ls.subtitle2}</h3>
+              <p>{ls.subtext2}</p>
+              <h3>{ls.subtitle3}</h3>
+              <p>{ls.subtext3}</p>
+              <h3>{ls.subtitle4}</h3>
+              <p>{ls.subtext4}</p>
+              <h3>{ls.subtitle5}</h3>
+              <p>{ls.subtext5}</p>
+              <h3>{ls.subtitle6}</h3>
+              <p>{ls.subtext6}</p>
+              <h3>{ls.subtitle7}</h3>
+              <p>{ls.subtext7}</p>
+              <div>
+                <p>{ls.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
