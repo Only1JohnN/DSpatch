@@ -88,7 +88,10 @@ const Tracking = () => {
           >
             View Bill of Lading
           </p>
-        </div>
+        </div><div id={!display2 && display ? "active-indicator" : ''}>
+        </div><div id={display2 && display ? "active-indicator2" : ''}>
+          </div>
+          <div id={display ? "hr": ""}></div>
         <div className={display2 && display ? "no-display text-center" : "display text-center mt-5"}>
           <p>
             Enter up to 10 of your DSpatch tracking, order numbers here <br /> (one per line).
@@ -105,7 +108,7 @@ const Tracking = () => {
         </div>
         {display2 && (
           <div className={display ? "display text-center mt-5" : "no-display text-center"}>
-            <p>
+            <p id="accessbill-action">
               <a href='#'>
                 <u>LOGIN TO ACCESS BILL OF LADING</u>
               </a>
