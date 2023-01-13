@@ -361,7 +361,7 @@ const Terms = () => {
 
   const Signup = () => {
     return (
-      <div className='p-4 d-none d-sm-block signup--box'>
+      <div className='p-4 signup--box'>
         <p>Find support for your bookings, account and other issues</p>
         <div className='text-center signup--btn'>
           <Button className='bttn'>
@@ -381,7 +381,7 @@ const Terms = () => {
       </div>
 
       {/* Table of content */}
-      <div className='container d-flex justify-content-between'>
+      <div className='container d-block d-sm-flex justify-content-between'>
         <div>
           <h2 className='mb-4'>TABLE OF CONTENT</h2>
           {terms.map((list) => (
