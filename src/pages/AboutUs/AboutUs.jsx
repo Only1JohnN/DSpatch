@@ -1,33 +1,12 @@
 import React, { useState } from "react";
 
 // Material imports
-import {
-  Box,
-  Chip,
-  Container,
-  Link,
-  Stack,
-  Typography,
-  Card,
-  Avatar,
-  Rating,
-  CardContent,
-} from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { ThemeProvider } from "@mui/material/styles";
 
-// React-Router-Dom
-// import { Link } from 'react-router-dom';
-
-// Assets
 import theme from "../../assets/theme";
 import {
-  // AbuLogo,
-  // ShowIcon,
-  // HideIcon,
-  // TopSemiColon,
-  // BottomSemiColon,
-  // Ellipse,
   GirlImage,
   SwaggerImage,
   ManImage,
@@ -43,8 +22,6 @@ import { ReactComponent as BottomSemiColon } from "../../assets/svgs/semicolon_b
 import { ReactComponent as ShowIcon } from "../../assets/svgs/show_icon.svg";
 import { ReactComponent as HideIcon } from "../../assets/svgs/hide_icon.svg";
 import { ReactComponent as Logo } from "../../assets/svgs/dspatch_logo-abu.svg";
-
-import { Button } from "../../components";
 
 import useStyles from "./styles";
 
@@ -84,8 +61,6 @@ const AboutUs = () => {
                 alignItems: "center",
               }}
             >
-              {/* <Grid container direction={{ xs: "column", md: "row" }}> */}
-              {/* <Grid> */}
               <Typography
                 variant='h4'
                 sx={{
@@ -101,8 +76,6 @@ const AboutUs = () => {
                 DSpatch is a technology startup in Nigeria, Africa's largest economy, with the
                 potential to become one of Africa's most significant firms.
               </Typography>
-              {/* </Grid> */}
-              {/* </Grid> */}
             </Container>
             <Box
               sx={{
@@ -146,7 +119,6 @@ const AboutUs = () => {
                 xs
                 sx={{
                   display: "flex",
-                  // flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "space-between",
                   padding: "0 4rem",

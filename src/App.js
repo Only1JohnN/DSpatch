@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 
 import { Navbar, Footer } from "./components";
-import AboutUs from "./pages/AboutUs/AboutUs";
 import Routes from "./Routes";
 
 function App() {
