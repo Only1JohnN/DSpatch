@@ -68,6 +68,7 @@ const AboutUs = () => {
                   fontSize: "56px",
                   lineHeight: "62px",
                   color: "#FFFFFF",
+                  marginBottom: "1rem",
                 }}
               >
                 About
@@ -114,17 +115,32 @@ const AboutUs = () => {
           }}
         >
           <Stack spacing={12}>
-            <Grid container direction={{ xs: "column", md: "column" }} columnSpacing={{ md: 6 }}>
+            <Grid
+              container
+              direction={{ xs: "column", md: "column" }}
+              sx={{
+                borderBottom: "1px solid #092C4C",
+              }}
+              columnSpacing={{ md: 6 }}
+            >
               <Grid
                 xs
                 sx={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  padding: "0 4rem",
+                  padding: "1rem 4rem",
                 }}
               >
-                <Typography variant='subtitle2' mb={{ xs: 0, md: 0 }} color='#092C4C'>
+                <Typography
+                  variant='subtitle2'
+                  sx={{
+                    fontWeight: "600",
+                    fontSize: "20px",
+                    lineHeight: "22px",
+                    color: "#092C4C",
+                  }}
+                >
                   Read our full mission statement
                 </Typography>
                 <Box
@@ -144,8 +160,7 @@ const AboutUs = () => {
                 <Grid
                   xs
                   sx={{
-                    borderBottom: "1px solid #092C4C",
-                    marginTop: "2rem",
+                    marginTop: ".5rem",
                   }}
                 >
                   <Typography variant='subtitle2' mb={{ xs: 4, md: 4 }} color='#092C4C'>
