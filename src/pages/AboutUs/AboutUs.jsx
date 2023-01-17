@@ -73,7 +73,17 @@ const AboutUs = () => {
               >
                 About
               </Typography>
-              <Typography variant='subtitleAbout'>
+              <Typography
+                variant='subtitle2'
+                sx={{
+                  fontWeight: "400",
+                  fontSize: "20px",
+                  lineHeight: "28px",
+                  textAlign: "center",
+                  color: "#FFFFFF",
+                  maxWidth: "599px",
+                }}
+              >
                 DSpatch is a technology startup in Nigeria, Africa's largest economy, with the
                 potential to become one of Africa's most significant firms.
               </Typography>

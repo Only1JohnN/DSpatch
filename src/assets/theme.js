@@ -34,15 +34,6 @@ const theme = createTheme({
       // fontSize: '12px',
       lineHeight: "18px",
     },
-
-    subtitleAbout: {
-      fontWeight: "400",
-      fontSize: "20px",
-      lineHeight: "28px",
-      textAlign: "center",
-      color: "#FFFFFF",
-      maxWidth: "599px",
-    },
   },
 });
 
