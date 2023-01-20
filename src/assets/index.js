@@ -9,6 +9,7 @@ import inIcon from "./svgs/Vectorin_icon.svg";
 import tikTokIcon from "./svgs/Vectortik_icon.svg";
 
 import PhoneMockup from "./images/phone-mockup.png";
+import trackingImage from "./images/trackingImage.jpg"
 
 import AbuLogo from "./svgs/dspatch_logo-abu.svg";
 import TopSemiColon from "./svgs/semicolon_t.svg";
@@ -46,4 +47,5 @@ export {
   ConferenceImage,
   Group,
   PatternGroup,
+  trackingImage,
 };
