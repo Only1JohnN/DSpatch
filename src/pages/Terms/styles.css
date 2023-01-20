@@ -53,10 +53,10 @@ body {
   box-shadow: var(--blue) 0px 0px 5px 0px, var(--blue) 0px 0px 1px 0px !important;
 }
 @media (width >=980px) {
-  .signup--box{
+  .signup--box {
     width: 35%;
   }
-  .signup--box p{
+  .signup--box p {
     font-size: 20px;
   }
 }
