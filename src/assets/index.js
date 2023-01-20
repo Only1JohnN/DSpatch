@@ -9,6 +9,7 @@ import inIcon from "./svgs/Vectorin_icon.svg";
 import tikTokIcon from "./svgs/Vectortik_icon.svg";
 
 import PhoneMockup from "./images/phone-mockup.png";
+import trackingImage from "./images/trackingImage.jpg"
 
 export {
   Logo,
@@ -21,4 +22,6 @@ export {
   twitterIcon,
   inIcon,
   tikTokIcon,
+  trackingImage,
+
 };
