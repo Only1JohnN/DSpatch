@@ -8,8 +8,8 @@ import twitterIcon from "./svgs/Vectortwit_icon.svg";
 import inIcon from "./svgs/Vectorin_icon.svg";
 import tikTokIcon from "./svgs/Vectortik_icon.svg";
 
-import PhoneMockup from "./images/phone-mockup.png";
-import trackingImage from "./images/trackingImage.jpg"
+import Helmet from "./images/helmet.png";
+import trackingImage from "./images/trackingImage.jpg";
 
 import AbuLogo from "./svgs/dspatch_logo-abu.svg";
 import TopSemiColon from "./svgs/semicolon_t.svg";
@@ -22,11 +22,18 @@ import FirstImage from "./svgs/bg_first_section.svg";
 import ConferenceImage from "./svgs/conferenceImage.svg";
 import Group from "./svgs/group.svg";
 import PatternGroup from "./svgs/patternGroup.svg";
+import DeliveryMan from "./svgs/delivery-man.svg";
+import SmartPhone from "./svgs/smartphone.svg";
+import Wallet from "./svgs/Wallet.svg";
+import Banner from "./images/roman-logo.png";
+import BikePOV from "./images/bike_pov.png";
+import BlurMotion from "./images/blur_motion.png";
+import Bikers from "./images/bikers.png";
 
 export {
   Logo,
   FooterLogo,
-  PhoneMockup,
+  Helmet,
   AppStore,
   PlayStore,
   facebookIcon,
@@ -48,4 +55,11 @@ export {
   Group,
   PatternGroup,
   trackingImage,
+  DeliveryMan,
+  SmartPhone,
+  Wallet,
+  Banner,
+  BikePOV,
+  Bikers,
+  BlurMotion,
 };
