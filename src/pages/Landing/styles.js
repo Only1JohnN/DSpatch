@@ -1,4 +1,5 @@
 import { makeStyles } from "@mui/styles";
+import { Banner } from "../../assets";
 
 export default makeStyles((theme) => ({
   wrapper: {
@@ -11,37 +12,18 @@ export default makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-
-    // '@media (min-width: 375px) and (max-width: 600px)': {
-    //   height: '100vh',
-    // }
-  },
-
-  phoneMockup: {
-    height: "100%",
-    width: "100%",
   },
 
   miniJumbo: {
-    backgroundImage:
-      'url("https://media.istockphoto.com/id/492489876/photo/manhattan-from-the-roof-top.jpg?s=612x612&w=0&k=20&c=HI4x4RHskzeV-5DFkyNU98Z8QTukwe5n4PQ185NJJOI=")',
+    backgroundImage: `url(${Banner})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "100% 100%",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
   },
 
   store: {
     "@media (max-width: 600px)": {
-      width: "35%",
+      width: "100%",
     },
-  },
-
-  placeholders: {
-    width: "100%",
-    backgroundColor: "#BDBDBD",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    fontWeight: "bold",
   },
 }));

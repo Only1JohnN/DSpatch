@@ -10,11 +10,11 @@
   body {
     color: var(--blue) !important;
   }
-
+ /* tr-hero section starts */
   .tr-hero{
     width: 100%;
     height: 555px;
-    background: url(./images/tracking-hero.jpg);
+    background: url(../../assets/images/trackingImage.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: darken;
@@ -41,6 +41,28 @@
     line-height: 28px;
     color: #fff
   }
+  @media (width >= 768px){
+    .tr-hero{
+      background-position: center;
+    }
+    .tr-hero-title{
+      position: relative;
+      top: 230px;
+      left: 100px;
+      width: 70%;
+    }
+  }
+  @media (width < 576px){
+    .tr-hero{
+      background-position: -120px center;
+    }
+    .tr-hero-title{
+      left: 0px;
+      width: 100%;
+    }
+  }
+  /* tr-hero section ends */
+
   .hr{
     position: relative;
     width: 1170px;
@@ -72,22 +94,22 @@
     padding: 20px 0px;
   }
 
-  /*  */
-  /*  */
-  .tr-action__title{
-    margin: 100px 0px 30px;
-  }
-  .tr-action__title h3{
-    font-family: inherit;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 35px;
-    margin: 100px 0px 50px;
-  }
+/*  */
+/*  */
+.tr-action__title {
+  margin: 100px 0px 30px;
+}
+.tr-action__title h3 {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  margin: 100px 0px 50px;
+}
 
- /* Toggle classes starts*/
- .btn-active{
+/* Toggle classes starts*/
+.btn-active {
   width: 250px !important;
   height: 70px;
   width: 250px;
@@ -95,32 +117,32 @@
   font-weight: 700;
   line-height: 22px;
 }
-.btn-inactive{
+.btn-inactive {
   width: 250px;
   height: 60px;
   font-weight: 700;
   font-size: 16px;
-  background: #F2F2F2 !important;
+  background: #f2f2f2 !important;
   color: black !important;
 }
 
-.display{
+.display {
   display: block;
 }
-.no-display{
+.no-display {
   display: none;
 }
 
-.proof-active{
-  color: #092C4C;
+.proof-active {
+  color: #092c4c;
   cursor: pointer;
 }
-.proof-inactive{
+.proof-inactive {
   color: #828282;
   cursor: pointer;
 }
 
-#active-indicator{
+#tab-indicator{
   background-color: #092c4c;
   border-radius: 10px 10px 0px 0px;
   height: 8px;
@@ -128,7 +150,8 @@
   position: relative;
   left: 330px;
 }
-#active-indicator2{
+
+#tab-indicator2{
   background-color: #092c4c;
   border-radius: 10px 10px 0px 0px;
   height: 8px;
@@ -136,6 +159,83 @@
   position: relative;
   left: 535px;
 }
+
+#hr{
+  position: relative;
+  width: 414px;
+  height: 0px;
+  left: 330px;
+  border: 0.1px solid #E0E0E0;
+}
+
+@media (width >= 576px){
+  #tab-indicator{
+    left: 120px !important;
+  }
+  #tab-indicator2{
+    left: 330px;
+  }
+  #hr{
+    left: 120px;
+  }
+}
+
+/* medium screen */
+
+@media (width >= 768px){
+  #tab-indicator{
+    left: 120px !important;
+  }
+  #tab-indicator2{
+    left: 330px;
+  }
+  #hr{
+    left: 120px;
+  }
+}
+
+/* large screen */
+
+@media (width >= 992px){
+  #tab-indicator{
+    left: 240px !important;
+  }
+  #tab-indicator2{
+    left: 450px;
+  }
+  #hr{
+    left: 240px;
+  }
+}
+
+/* xl screen */
+
+@media (width >= 1200px){
+  #tab-indicator{
+    left: 330px !important;
+  }
+  #tab-indicator2{
+    left: 540px;
+  }
+  #hr{
+    left: 330px;
+  }
+}
+
+/* XXL screen */
+
+@media (width >= 1400px){
+  #tab-indicator{
+    left: 420px !important;
+  }
+  #tab-indicator2{
+    left: 640px;
+  }
+  #hr{
+    left: 430px;
+  }
+}
+
  /* Toggle classes ends*/
 
  form input{
@@ -150,6 +250,7 @@
   form input:focus{
     outline: 2px solid #092c4c;
   }
+ 
   .track-btn{
     width: 175px;
     height: 62px;
@@ -178,11 +279,45 @@
   line-height: 22px;
   color: #092c4c;
 }
+/* mobile screen */
+@media (width < 576px){
+  #tab-indicator{
+    left: 0px;
+    width: 170px;
+  }
+  #tab-indicator2{
+    left: 160px;
+    width: 170px;
+  }
 
-#hr{
-  position: relative;
-  width: 414px;
-  height: 0px;
-  left: 330px;
-  border: 0.1px solid #E0E0E0;
+  #hr{
+    left: 0px;
+    width: 320px;
+  }
+
+  form input{
+    width: 300px;
+  }
+  .track-btn{
+    left: 70px;
+    width: 150px;
+    height: 52px;
+  }
+  #help-action{
+    position: relative;
+    left: -127px;
+  }
+}
+
+@media (width >= 768px){
+  form input{
+    width: 672px;
+  }
+  .track-btn{
+    left: 250px;
+  }
+  #help-action{
+    position: relative;
+    left: -293px;
+  }
 }
