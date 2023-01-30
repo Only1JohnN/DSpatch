@@ -30,6 +30,14 @@ import BikePOV from "./images/bike_pov.png";
 import BlurMotion from "./images/blur_motion.png";
 import Bikers from "./images/bikers.png";
 
+import LineDesign from "./svgs/lineDesign.svg";
+import CircleDesign from "./svgs/CircleDesign.svg";
+import SignInDesign from "./images/signupDesign.png";
+import WhatsAppLogo from "./svgs/whatsAppLogo.svg";
+import SgnUpBike from "./images/sgnUpBike.png";
+import FleetDesign from "./images/FleetDesign.png";
+import DspatchWhiteLogo from "./svgs/DspatchWhiteLogo.svg";
+
 export {
   Logo,
   FooterLogo,
@@ -62,4 +70,11 @@ export {
   BikePOV,
   Bikers,
   BlurMotion,
+  LineDesign,
+  CircleDesign,
+  SignInDesign,
+  WhatsAppLogo,
+  FleetDesign,
+  SgnUpBike,
+  DspatchWhiteLogo,
 };

@@ -1,0 +1,52 @@
+.checkbox-new {
+  border: none;
+  display: flex;
+  position: relative;
+}
+
+.checkbox-new > label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #092c4c;
+  text-align: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.checkbox-new > label > .checkIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 17px;
+  width: 17px;
+  border: 1px solid #dcd8ec;
+  box-sizing: border-box;
+  box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.0590183);
+  border-radius: 3px;
+}
+
+.checkbox-new > label > .checkIcon > .checked {
+  display: none;
+}
+
+.checkbox-new > label > span {
+  display: block;
+  margin-left: 0.7em;
+  font-size: 20px;
+  text-align: left;
+  max-width: 30rem;
+}
+
+.checkbox-new > input {
+  display: none;
+}
+
+.checkbox-new > input:checked + label .checked {
+  display: flex;
+  font-size: 0.7em;
+}
+.checkbox-new > input:checked + label .checkIcon {
+  border-color: #5941a9;
+}

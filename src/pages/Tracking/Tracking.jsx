@@ -71,7 +71,9 @@ const Tracking = () => {
         </div>
         <div
           className={
-            display ? "display container text-center d-flex justify-content-center gx-5" : "no-display"
+            display
+              ? "display container text-center d-flex justify-content-center gx-5"
+              : "no-display"
           }
         >
           <p
@@ -97,7 +99,7 @@ const Tracking = () => {
             Enter up to 10 of your DSpatch tracking, order numbers here <br /> (one per line).
           </p>
           <div>
-            <form>
+            <form className='tracking_form'>
               <input type='text' placeholder='TRACKING NUMBER' />
             </form>
             <p id='help-action'>
