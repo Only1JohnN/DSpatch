@@ -1,0 +1,5 @@
+.input_comp:focus {
+  outline: none !important;
+  border: 1.7px solid #092c4c !important;
+  box-shadow: 0 0 6px #719ece5a;
+}
