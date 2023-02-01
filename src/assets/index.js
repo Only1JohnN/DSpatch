@@ -1,4 +1,4 @@
-import Logo from "./svgs/logo.svg";
+import { ReactComponent as Logo } from "./svgs/logo.svg";
 import FooterLogo from "./svgs/Group 2021logo_DS.svg";
 import AppStore from "./svgs/appstore.svg";
 import PlayStore from "./svgs/playstore.svg";

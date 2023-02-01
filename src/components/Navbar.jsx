@@ -13,11 +13,14 @@ import {
   ListItemButton,
   ListItemText,
   Toolbar,
-  Typography,
+  Link,
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { ThemeProvider } from "@mui/material/styles";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
+
+// React-Router-Dom
+import { Link as RouterLink } from "react-router-dom";
 
 // Assets
 import theme from "../assets/theme";
@@ -40,7 +43,7 @@ const Navbar = (props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <img src={Logo} alt='DSpatch' style={{ width: "80%", margin: "8% 0" }} />
+      <Logo style={{ width: "80%" }} />
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -74,21 +77,23 @@ const Navbar = (props) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ display: "flex" }}>
+      <Box display='flex'>
         <AppBar
           component='nav'
           sx={{
             color: "#092C4C",
             backgroundColor: "#ffffff",
-            p: 1.5,
+            px: { xs: 0.5, md: 15 },
+            py: 1,
+            alignItems: "center",
           }}
           position='fixed'
           elevation={trigger ? 4 : 0}
         >
-          <Toolbar>
-            <div style={{ flexGrow: 1 }}>
-              <img src={Logo} alt='DSpatch' style={{ width: "25%" }} />
-            </div>
+          <Toolbar sx={{ justifyContent: "space-between", width: "100%" }}>
+            <Link component={RouterLink} to='/' underline='none'>
+              <Logo style={{ width: "150px", height: "85px" }} />
+            </Link>
             <IconButton
               color='inherit'
               aria-label='open drawer'
@@ -99,11 +104,21 @@ const Navbar = (props) => {
               <MenuIcon />
             </IconButton>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              {navItems.map((item) => (
-                <Button key={item} sx={{ color: "#092C4C", fontSize: "12px" }}>
+              {navItems.map((item, index) => (
+                <Link
+                  component={RouterLink}
+                  to={item.toLowerCase()}
+                  underline='none'
+                  key={index}
+                  color='#092C4C'
+                  sx={{ mx: { md: "10px" }, "&:hover": { color: "#F2994A" } }}
+                >
                   {item}
-                </Button>
+                </Link>
               ))}
+            </Box>
+
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
               <Btn
                 sx={{
                   backgroundColor: "rgba(0, 0, 0, 0)",
@@ -145,7 +160,7 @@ const Navbar = (props) => {
             {drawer}
           </Drawer>
         </Box>
-      </div>
+      </Box>
       <Toolbar />
     </ThemeProvider>
   );
