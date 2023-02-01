@@ -43,11 +43,13 @@ const Navbar = (props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Logo style={{ width: "80%" }} />
+      <Link component={RouterLink} to='/' underline='none'>
+        <Logo style={{ width: "80%" }} />
+      </Link>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map((item, key) => (
+          <ListItem key={key} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item} />
             </ListItemButton>
@@ -55,12 +57,14 @@ const Navbar = (props) => {
         ))}
         <ListItem sx={{ justifyContent: "center" }}>
           <Btn
+            component={RouterLink}
+            to='signIn'
             sx={{
               backgroundColor: "rgba(0, 0, 0, 0)",
               color: "#092C4C",
 
               "$:hover": {
-                color: "#ffffff",
+                backgroundColor: "#CEDFDB",
               },
             }}
             variant='outlined'
@@ -69,7 +73,9 @@ const Navbar = (props) => {
           </Btn>
         </ListItem>
         <ListItem sx={{ justifyContent: "center" }}>
-          <Btn>Sign Up</Btn>
+          <Btn component={RouterLink} to='signup'>
+            Sign Up
+          </Btn>
         </ListItem>
       </List>
     </Box>
@@ -105,21 +111,28 @@ const Navbar = (props) => {
             </IconButton>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item, index) => (
-                <Link
+                <Button
                   component={RouterLink}
                   to={item.toLowerCase()}
                   underline='none'
                   key={index}
-                  color='#092C4C'
-                  sx={{ mx: { md: "10px" }, "&:hover": { color: "#F2994A" } }}
+                  sx={{
+                    mx: { md: 0.7 },
+                    color: "#092C4C",
+                    textTransform: "capitalize",
+                    transition: "all .3s ease-in-out",
+                    "&:hover": { color: "inherit", backgroundColor: "#F4F4F6" },
+                  }}
                 >
                   {item}
-                </Link>
+                </Button>
               ))}
             </Box>
 
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               <Btn
+                component={RouterLink}
+                to='/signin'
                 sx={{
                   backgroundColor: "rgba(0, 0, 0, 0)",
                   color: "#092C4C",
@@ -127,7 +140,7 @@ const Navbar = (props) => {
                   fontSize: "12px",
 
                   "&:hover": {
-                    color: "#ffffff",
+                    backgroundColor: "#CEDFDB",
                   },
                 }}
                 variant='outlined'
@@ -135,7 +148,9 @@ const Navbar = (props) => {
                 Sign In
               </Btn>
 
-              <Btn sx={{ fontSize: 12 }}>Sign Up</Btn>
+              <Btn component={RouterLink} to='/signup' sx={{ fontSize: 12 }}>
+                Sign Up
+              </Btn>
             </Box>
           </Toolbar>
         </AppBar>
