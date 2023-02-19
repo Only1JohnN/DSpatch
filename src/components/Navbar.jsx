@@ -172,7 +172,7 @@ const Navbar = (props) => {
                     <ListItemButton
                       onClick={() => handleDrawerToggle()}
                       component={RouterLink}
-                      to='/dspatchers'
+                      to='/dspatcher'
                       underline='none'
                       divider={true}
                     >
@@ -181,7 +181,7 @@ const Navbar = (props) => {
                     <ListItemButton
                       onClick={() => handleDrawerToggle()}
                       component={RouterLink}
-                      to='/customers'
+                      to='/customer'
                       underline='none'
                       divider={true}
                     >
@@ -190,7 +190,7 @@ const Navbar = (props) => {
                     <ListItemButton
                       onClick={() => handleDrawerToggle()}
                       component={RouterLink}
-                      to='/couriers'
+                      to='/courier'
                       underline='none'
                       divider={true}
                     >
@@ -199,7 +199,7 @@ const Navbar = (props) => {
                     <ListItemButton
                       onClick={() => handleDrawerToggle()}
                       component={RouterLink}
-                      to='/fleet-owners'
+                      to='/fleet-owner'
                       underline='none'
                       divider={partnersMobileOpen ? true : false}
                     >
@@ -405,7 +405,7 @@ const Navbar = (props) => {
                       >
                         <MenuItem
                           component={RouterLink}
-                          to='/dspatchers'
+                          to='/dspatcher'
                           onClick={handleDropdownClose}
                           underline='none'
                           divider={true}
@@ -414,7 +414,7 @@ const Navbar = (props) => {
                         </MenuItem>
                         <MenuItem
                           component={RouterLink}
-                          to='/customers'
+                          to='/customer'
                           onClick={handleDropdownClose}
                           underline='none'
                           divider={true}
@@ -423,7 +423,7 @@ const Navbar = (props) => {
                         </MenuItem>
                         <MenuItem
                           component={RouterLink}
-                          to='/couriers'
+                          to='/courier'
                           onClick={handleDropdownClose}
                           underline='none'
                           divider={true}
@@ -432,7 +432,7 @@ const Navbar = (props) => {
                         </MenuItem>
                         <MenuItem
                           component={RouterLink}
-                          to='/fleet-owners'
+                          to='/fleet-owner'
                           onClick={handleDropdownClose}
                           underline='none'
                         >

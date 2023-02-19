@@ -13,6 +13,9 @@ import Grid from "@mui/material/Unstable_Grid2";
 // Material imports
 import { Box, IconButton, List, Typography, Link, Container } from "@mui/material";
 
+// React-Router-Dom
+import { Link as RouterLink } from "react-router-dom";
+
 import "./Footer.css";
 
 const Footer = () => {
@@ -40,16 +43,24 @@ const Footer = () => {
                 Quick Links
               </Typography>
               <li>
-                <a href='tracking'>Tracking</a>
+                <Link component={RouterLink} underline='none' to='tracking'>
+                  Tracking
+                </Link>
               </li>
               <li>
-                <a href='safety'>Safety</a>
+                <Link component={RouterLink} underline='none' to='safety'>
+                  Safety
+                </Link>
               </li>
               <li>
-                <a href='support'>Support</a>
+                <Link component={RouterLink} underline='none' to='support'>
+                  Support
+                </Link>
               </li>
               <li>
-                <a href='help'>Help</a>
+                <Link component={RouterLink} underline='none' to='help'>
+                  Help
+                </Link>
               </li>
             </List>
           </Grid>
@@ -59,19 +70,29 @@ const Footer = () => {
                 Company
               </Typography>
               <li>
-                <a href='about-us'>About DSpatch</a>
+                <Link component={RouterLink} underline='none' to='about-us'>
+                  About DSpatch
+                </Link>
               </li>
               <li>
-                <a href='offerings'>Our Offerings</a>
+                <Link component={RouterLink} underline='none' to='offerings'>
+                  Our Offerings
+                </Link>
               </li>
               <li>
-                <a href='how'>How DSpatch works</a>
+                <Link component={RouterLink} underline='none' to='how'>
+                  How DSpatch works
+                </Link>
               </li>
               <li>
-                <a href='press'>Press</a>
+                <Link component={RouterLink} underline='none' to='press'>
+                  Press
+                </Link>
               </li>
               <li>
-                <a href='blog'>Blog</a>
+                <Link component={RouterLink} underline='none' to='blog'>
+                  Blog
+                </Link>
               </li>
             </List>
           </Grid>
@@ -81,16 +102,24 @@ const Footer = () => {
                 Partner with DSpatch
               </Typography>
               <li>
-                <a href='signupascustomer'>Sign up as Customer</a>
+                <Link component={RouterLink} underline='none' to='customer'>
+                  Sign up as Customer
+                </Link>
               </li>
               <li>
-                <a href='signupascourier'>Sign up as a Courier</a>
+                <Link component={RouterLink} underline='none' to='courier'>
+                  Sign up as a Courier
+                </Link>
               </li>
               <li>
-                <a href='signupasdspatcher'>Sign up as a DSpatcher</a>
+                <Link component={RouterLink} underline='none' to='signupasdspatcher'>
+                  Sign up as a DSpatcher
+                </Link>
               </li>
               <li>
-                <a href='fleet'>Fleet owner</a>
+                <Link component={RouterLink} underline='none' to='fleet-owner'>
+                  Fleet owner
+                </Link>
               </li>
             </List>
           </Grid>
@@ -143,10 +172,14 @@ const Footer = () => {
           <Grid xs className='terms__con'>
             <List>
               <li>
-                <a href='./terms'>Terms & Conditions &nbsp; &nbsp;</a>
+                <Link component={RouterLink} underline='none' to='./terms-of-use'>
+                  Terms & Conditions &nbsp; &nbsp;
+                </Link>
               </li>
               <li>
-                <a href='./cookie'>Cookie policy</a>
+                <Link component={RouterLink} underline='none' to='./cookies-and-policy'>
+                  Cookie policy
+                </Link>
               </li>
             </List>
           </Grid>

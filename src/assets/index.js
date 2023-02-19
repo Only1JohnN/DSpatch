@@ -44,7 +44,6 @@ import Verify from "./images/verify.jpg";
 import CustomerSupport from "./images/customer-care.avif";
 import Confidential from "./images/confidentiality.jpg";
 
-
 export {
   Logo,
   FooterLogo,
@@ -88,6 +87,4 @@ export {
   DeliveryTracking,
   Insured,
   Verify,
-  CustomerSupport,
-  Confidential
 };
