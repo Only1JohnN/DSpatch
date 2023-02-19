@@ -37,6 +37,10 @@ import WhatsAppLogo from "./svgs/whatsAppLogo.svg";
 import SgnUpBike from "./images/sgnUpBike.png";
 import FleetDesign from "./images/FleetDesign.png";
 import DspatchWhiteLogo from "./svgs/DspatchWhiteLogo.svg";
+import SafetyService from "./images/safety_service.webp";
+import DeliveryTracking from "./images/delivery_tracking.webp";
+import Insured from "./images/insured.jpeg";
+import Verify from "./images/verify.jpg";
 
 export {
   Logo,
@@ -77,4 +81,8 @@ export {
   FleetDesign,
   SgnUpBike,
   DspatchWhiteLogo,
+  SafetyService,
+  DeliveryTracking,
+  Insured,
+  Verify,
 };
