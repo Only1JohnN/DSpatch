@@ -15,7 +15,9 @@ import {
     SafetyService,
     DeliveryTracking,
     Insured,
-    Verify
+    Verify,
+    Confidential,
+    CustomerSupport
   } from "../../assets"
 
 const Safety = () => {
@@ -170,6 +172,80 @@ const Safety = () => {
                     borderTopRightRadius: { xs: "6px", md: "10px" },
                     borderTopLeftRadius: { xs: "6px", md: "10px" },
                     backgroundImage: `url(${Insured})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                  }}
+                />
+              </Grid>
+            </Grid>
+
+            <Grid
+              container
+              direction={{ xs: "column-reverse", md: "row" }}
+              columnSpacing={{ md: 6 }}
+            >
+              <Grid xs>
+                <Box
+                  sx={{
+                    height: { xs: "180px", md: "300px" },
+                    borderBottomRightRadius: { xs: "30px", md: "50px" },
+                    borderBottomLeftRadius: { xs: "30px", md: "50px" },
+                    borderTopRightRadius: { xs: "6px", md: "10px" },
+                    borderTopLeftRadius: { xs: "6px", md: "10px" },
+                    backgroundImage: `url(${CustomerSupport})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                  }}
+                />
+              </Grid>
+              <Grid
+                xs
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                <Typography variant='h4' mb={1.5} color='#092C4C'>
+                24/7 Support 
+                </Typography>
+                <Typography variant='subtitle2' mb={{ xs: 2, md: 0 }} color='#092C4C'>
+                DSpatch support is available 24 hours a day, 7 days a week, and is handled by a team of trained safety agents. 
+                If you’re in immediate danger, you should always contact authorities first.
+                </Typography>
+              </Grid>
+            </Grid>
+
+
+            <Grid container direction={{ xs: "column", md: "row" }} columnSpacing={{ md: 6 }}>
+              <Grid
+                xs
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                <Typography variant='h4' mb={1.5} color='#092C4C'>
+                Your Personal details stays Confidential
+                </Typography>
+                <Typography variant='subtitle2' mb={{ xs: 4, md: 0 }} color='#092C4C'>
+                We use technology to help keep your phone number private, so neither drivers nor riders see each other's phone numbers when communicating via the Uber app. 
+                Once a trip is finished, the app protects rider information by hiding specific pickup and dropoff addresses in a driver's trip history.
+                </Typography>
+              </Grid>
+
+              <Grid xs>
+                <Box
+                  sx={{
+                    height: { xs: "180px", md: "300px" },
+                    borderBottomRightRadius: { xs: "30px", md: "50px" },
+                    borderBottomLeftRadius: { xs: "30px", md: "50px" },
+                    borderTopRightRadius: { xs: "6px", md: "10px" },
+                    borderTopLeftRadius: { xs: "6px", md: "10px" },
+                    backgroundImage: `url(${Confidential})`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
