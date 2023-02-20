@@ -1,18 +1,16 @@
 
 
-import { makeStyles } from "@mui/styles";
-
 export default makeStyles((theme) => ({
     alignment: {
-        width: "55px",
-        margin: "auto",
-        
-
+      marginTop: "50px",
+      paddingTop: "30px",
     },
-
     imageMockup: {
-        width: "46px",
-        height: "56px",
-        marginTop: "30px"
-    }
-}));
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
+      width: "50px",
+      height: "56px",
+    },
+  }));
+  
