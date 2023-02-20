@@ -41,6 +41,8 @@ import SafetyService from "./images/safety_service.webp";
 import DeliveryTracking from "./images/delivery_tracking.webp";
 import Insured from "./images/insured.jpeg";
 import Verify from "./images/verify.jpg";
+import CustomerSupport from "./images/247Support.jpg";
+import Confidential from "./images/confidentiality.jpg"
 
 export {
   Logo,
@@ -85,4 +87,6 @@ export {
   DeliveryTracking,
   Insured,
   Verify,
+  CustomerSupport,
+  Confidential
 };
