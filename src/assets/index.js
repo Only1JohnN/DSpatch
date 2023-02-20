@@ -37,6 +37,10 @@ import WhatsAppLogo from "./svgs/whatsAppLogo.svg";
 import SgnUpBike from "./images/sgnUpBike.png";
 import FleetDesign from "./images/FleetDesign.png";
 import DspatchWhiteLogo from "./svgs/DspatchWhiteLogo.svg";
+import PhoneIcon from "./svgs/phone.svg";
+import ChatIcon from "./svgs/chat.svg";
+import EmailIcon from "./svgs/email.svg";
+import FaqIcon from "./svgs/faq.svg";
 import SafetyService from "./images/safety_service.webp";
 import DeliveryTracking from "./images/delivery_tracking.webp";
 import Insured from "./images/insured.jpeg";
@@ -83,6 +87,10 @@ export {
   FleetDesign,
   SgnUpBike,
   DspatchWhiteLogo,
+  PhoneIcon,
+  ChatIcon,
+  EmailIcon,
+  FaqIcon,
   SafetyService,
   DeliveryTracking,
   Insured,
