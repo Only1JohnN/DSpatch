@@ -37,12 +37,15 @@ import WhatsAppLogo from "./svgs/whatsAppLogo.svg";
 import SgnUpBike from "./images/sgnUpBike.png";
 import FleetDesign from "./images/FleetDesign.png";
 import DspatchWhiteLogo from "./svgs/DspatchWhiteLogo.svg";
+import PhoneIcon from "./svgs/phone.svg";
+import ChatIcon from "./svgs/chat.svg";
+import EmailIcon from "./svgs/email.svg";
+import FaqIcon from "./svgs/faq.svg";
 import SafetyService from "./images/safety_service.webp";
 import DeliveryTracking from "./images/delivery_tracking.webp";
 import Insured from "./images/insured.jpeg";
 import Verify from "./images/verify.jpg";
-import CustomerSupport from "./images/customer-care.avif";
-import Confidential from "./images/confidentiality.jpg";
+import CustomerSupport from "./images/247Support.jpg";
 
 export {
   Logo,
@@ -83,8 +86,13 @@ export {
   FleetDesign,
   SgnUpBike,
   DspatchWhiteLogo,
+  PhoneIcon,
+  ChatIcon,
+  EmailIcon,
+  FaqIcon,
   SafetyService,
   DeliveryTracking,
   Insured,
   Verify,
+  CustomerSupport
 };

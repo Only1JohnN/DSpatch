@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes as DOMRoutes, Route } from "react-router-dom";
 
-import { LandingPage, Terms, Tracking, About, SignIn, Safety } from "./pages";
+import { LandingPage, Terms, Tracking, About, SignIn, Safety, Help } from "./pages";
 import { Customer, FleetOwner, Rider } from "./pages/SignUp";
 
 const Routes = ({ location }) => {
@@ -17,6 +17,7 @@ const Routes = ({ location }) => {
       <Route exact path='customer/' element={<Customer />} />
       <Route exact path='fleet-owner/' element={<FleetOwner />} />
       <Route exact path='courier/' element={<Rider />} />
+      <Route exact path='help/' element={<Help />} />
     </DOMRoutes>
   );
 };
