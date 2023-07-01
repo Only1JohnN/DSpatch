@@ -275,7 +275,7 @@ const Navbar = (props) => {
           position='fixed'
           elevation={trigger ? 4 : 0}
         >
-          <Toolbar sx={{ width: "100%" }}>
+          <Toolbar sx={{ justifyContent: { xs: "start", md: "space-between" }, width: "100%" }}>
             <IconButton
               color='inherit'
               aria-label='open drawer'
