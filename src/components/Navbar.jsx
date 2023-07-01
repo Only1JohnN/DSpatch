@@ -41,7 +41,10 @@ const drawerWidth = 240;
 const navItems = ["Company", "Tracking", "Partner with DSpatch", "Safety", "Support", "Help"];
 
 const Navbar = (props) => {
-  const trigger = useScrollTrigger();
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  });
   const { window } = props;
   const container = window !== undefined ? () => window().document.body : undefined;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -272,19 +275,19 @@ const Navbar = (props) => {
           position='fixed'
           elevation={trigger ? 4 : 0}
         >
-          <Toolbar sx={{ justifyContent: "space-between", width: "100%" }}>
-            <Link component={RouterLink} to='/' underline='none'>
-              <Logo style={{ width: "150px", height: "85px" }} />
-            </Link>
+          <Toolbar sx={{ width: "100%" }}>
             <IconButton
               color='inherit'
               aria-label='open drawer'
-              edge='end'
+              edge='start'
               onClick={handleDrawerToggle}
-              sx={{ ml: 2, display: { sm: "none" } }}
+              sx={{ mr: 2, display: { sm: "none" } }}
             >
               <MenuIcon />
             </IconButton>
+            <Link component={RouterLink} to='/' underline='none'>
+              <Logo style={{ width: "150px", height: "85px" }} />
+            </Link>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item, index) => {
                 if (item.toLowerCase() == "company") {
@@ -494,9 +497,9 @@ const Navbar = (props) => {
             variant='temporary'
             open={mobileOpen}
             onClose={handleDrawerToggle}
-            anchor='right'
+            anchor='left'
             ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
+              keepMounted: true,
             }}
             sx={{
               display: { xs: "block", sm: "none" },
