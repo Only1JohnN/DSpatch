@@ -495,7 +495,7 @@ const CustomerSignUp = () => {
                   style={{
                     textDecoration: "none",
                   }}
-                  to='/sign-in'
+                  to='/signin'
                 >
                   <span
                     style={{

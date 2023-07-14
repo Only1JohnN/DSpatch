@@ -279,17 +279,20 @@ const SignIn = () => {
                           Remember me
                         </Checkbox>
                       </div>
-                      <span
-                        style={{
-                          fontWeight: "400",
-                          fontSize: "20px",
-                          lineHeight: "28px",
-                          color: "#092C4C",
-                          cursor: "pointer",
-                        }}
-                      >
-                        Forgot Password?
-                      </span>
+                      <Link underline='none' to='forgotpassword'>
+                        {" "}
+                        <span
+                          style={{
+                            fontWeight: "400",
+                            fontSize: "20px",
+                            lineHeight: "28px",
+                            color: "#092C4C",
+                            cursor: "pointer",
+                          }}
+                        >
+                          Forgot Password?
+                        </span>
+                      </Link>
                     </div>
                     <button
                       type='submit'
@@ -329,7 +332,7 @@ const SignIn = () => {
                   style={{
                     textDecoration: "none",
                   }}
-                  to='/sign-up'
+                  to='/signup'
                 >
                   <span
                     style={{
