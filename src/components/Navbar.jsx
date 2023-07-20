@@ -241,6 +241,9 @@ const Navbar = (props) => {
             sx={{
               backgroundColor: "rgba(0, 0, 0, 0)",
               color: "#092C4C",
+              fontSize: "13px",
+              borderRadius: "3px",
+              border: "1.5px",
 
               "$:hover": {
                 backgroundColor: "#CEDFDB",
@@ -252,7 +255,15 @@ const Navbar = (props) => {
           </Btn>
         </ListItem>
         <ListItem sx={{ justifyContent: "center" }}>
-          <Btn component={RouterLink} to='signup'>
+          <Btn
+            component={RouterLink}
+            to='signup'
+            sx={{
+              fontSize: "13px",
+              borderRadius: "3px",
+              border: "1.5px",
+            }}
+          >
             Sign Up
           </Btn>
         </ListItem>
@@ -266,6 +277,7 @@ const Navbar = (props) => {
         <AppBar
           component='nav'
           sx={{
+            height: "87px",
             color: "#092C4C",
             backgroundColor: "#ffffff",
             px: { xs: 0.5, md: 15 },
@@ -316,7 +328,7 @@ const Navbar = (props) => {
                             mt: 0.5,
 
                             "& .MuiMenuItem-root": {
-                              fontSize: 16,
+                              fontSize: 15,
                               color: "#092C4C",
 
                               "&:hover": {
@@ -395,7 +407,7 @@ const Navbar = (props) => {
                             mt: 0.5,
 
                             "& .MuiMenuItem-root": {
-                              fontSize: 16,
+                              fontSize: 15,
                               color: "#092C4C",
 
                               "&:hover": {
@@ -474,7 +486,9 @@ const Navbar = (props) => {
                   backgroundColor: "rgba(0, 0, 0, 0)",
                   color: "#092C4C",
                   marginRight: "10px",
-                  fontSize: "12px",
+                  fontSize: "13px",
+                  borderRadius: "3px",
+                  border: "1.5px",
 
                   "&:hover": {
                     backgroundColor: "#CEDFDB",
@@ -485,7 +499,11 @@ const Navbar = (props) => {
                 Sign In
               </Btn>
 
-              <Btn component={RouterLink} to='/signup' sx={{ fontSize: 12 }}>
+              <Btn
+                component={RouterLink}
+                to='/signup'
+                sx={{ fontSize: "13px", borderRadius: "3px", border: "1.5px" }}
+              >
                 Sign Up
               </Btn>
             </Box>

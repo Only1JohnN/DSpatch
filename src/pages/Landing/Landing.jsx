@@ -73,19 +73,29 @@ const Landing = () => {
                 my: { xs: 5, md: 0 },
               }}
             >
-              <Typography variant='h3' color='#ffffff' mb={1.5}>
+              <Typography
+                variant='h3'
+                color='#ffffff'
+                mb={1.5}
+                sx={{ fontWeight: "700px", fontSize: "48px", width: { md: "498px" } }}
+              >
                 The quick, inexpensive platform to travel your goods
               </Typography>
-              <Typography variant='body1' color='#ffffff' mb={{ xs: 3, md: 10 }}>
+              <Typography
+                variant='body1'
+                color='#ffffff'
+                mb={{ xs: 3, md: 10 }}
+                sx={{ marginBottom: "72px", fontSize: "16px", width: { md: "512px" } }}
+              >
                 DSptach is a platform to transport goods and services from anywhere in Nigeria. With
                 our quality drivers registered to the platform, your goods are in safe hands.
               </Typography>
 
-              <Typography variant='body1' color='#ffffff' mb={1}>
+              <Typography variant='body1' color='#ffffff' mb={1} sx={{ fontSize: "18px" }}>
                 Download the DSpatch app
               </Typography>
 
-              <Stack direction='row' spacing={{ xs: 4, md: 8 }}>
+              <Stack direction='row' spacing={{ xs: 4, md: 8 }} sx={{ marginRight: "20px" }}>
                 <Link to='#' component={RouterLink}>
                   <img
                     className={classes.store}
@@ -130,13 +140,39 @@ const Landing = () => {
             >
               <Grid container direction={{ xs: "column", md: "row" }}>
                 <Grid xs>
-                  <Typography variant='h4' color='#ffffff' mb={1}>
+                  <Typography
+                    variant='h4'
+                    color='#ffffff'
+                    mb={1}
+                    sx={{
+                      fontWeight: "700px",
+                      marginBottom: "16px",
+                      width: { md: "429px" },
+                      marginLeft: "16px",
+                      padding: "24px",
+                    }}
+                  >
                     Become a DSpatcher and get paid
                   </Typography>
-                  <Typography variant='subtitle2' color='#ffffff'>
+                  <Typography
+                    variant='subtitle2'
+                    color='#ffffff'
+                    sx={{
+                      fontSize: "18px",
+                      marginLeft: "35px",
+                      marginBottom: "5px",
+                    }}
+                  >
                     Drive on the platform with the most active rider network.
                   </Typography>
-                  <Typography variant='subtitle2' color='#ffffff' mb={{ xs: 3, md: 0 }}>
+                  <Typography
+                    variant='subtitle2'
+                    color='#ffffff'
+                    mb={{ xs: 3, md: 0 }}
+                    sx={{
+                      marginLeft: "35px",
+                    }}
+                  >
                     Be your own boss and choose your own schedule.
                   </Typography>
                 </Grid>
@@ -155,7 +191,8 @@ const Landing = () => {
                       backgroundColor: "#ffffff",
                       color: "#092C4C",
                       height: "fit-content",
-
+                      fontWeight: "700px",
+                      fontSize: "16px",
                       "&:hover": {
                         backgroundColor: "#E9E9E9",
                       },
