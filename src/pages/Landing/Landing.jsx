@@ -85,7 +85,12 @@ const Landing = () => {
                 variant='body1'
                 color='#ffffff'
                 mb={{ xs: 3, md: 10 }}
-                sx={{ marginBottom: "72px", fontSize: "16px", width: { md: "512px" } }}
+                sx={{
+                  marginBottom: "72px",
+                  lineHeight: "23px",
+                  fontSize: "16px",
+                  width: { md: "512px" },
+                }}
               >
                 DSptach is a platform to transport goods and services from anywhere in Nigeria. With
                 our quality drivers registered to the platform, your goods are in safe hands.
@@ -148,7 +153,7 @@ const Landing = () => {
                       fontWeight: "700px",
                       marginBottom: "16px",
                       width: { md: "429px" },
-                      marginLeft: "16px",
+                      marginLeft: "245px",
                       padding: "24px",
                     }}
                   >
@@ -159,7 +164,7 @@ const Landing = () => {
                     color='#ffffff'
                     sx={{
                       fontSize: "18px",
-                      marginLeft: "35px",
+                      marginLeft: "245px",
                       marginBottom: "5px",
                     }}
                   >
@@ -170,7 +175,7 @@ const Landing = () => {
                     color='#ffffff'
                     mb={{ xs: 3, md: 0 }}
                     sx={{
-                      marginLeft: "35px",
+                      marginLeft: "245px",
                     }}
                   >
                     Be your own boss and choose your own schedule.
@@ -192,6 +197,7 @@ const Landing = () => {
                       color: "#092C4C",
                       height: "fit-content",
                       fontWeight: "700px",
+                      width: "230px",
                       fontSize: "16px",
                       "&:hover": {
                         backgroundColor: "#E9E9E9",
@@ -239,7 +245,7 @@ const Landing = () => {
 
                 {index < 1 && isDesktop ? (
                   <Grid>
-                    <Typography variant='h5' fontSize={{ xs: 20, md: 24 }} fontWeight={600} mb={1}>
+                    <Typography variant='h5' fontSize={{ xs: 20, md: 24 }} fontWeight={700} mb={1}>
                       {service.title}
                     </Typography>
                     <Typography variant='subtitle1' fontSize={{ xs: 14, md: 16 }} lineHeight={1.5}>
@@ -248,7 +254,7 @@ const Landing = () => {
                   </Grid>
                 ) : (
                   <Grid xs>
-                    <Typography variant='h5' fontSize={{ xs: 20, md: 24 }} fontWeight={600} mb={1}>
+                    <Typography variant='h5' fontSize={{ xs: 20, md: 24 }} fontWeight={700} mb={1}>
                       {service.title}
                     </Typography>
                     <Typography variant='subtitle1' fontSize={{ xs: 14, md: 16 }} lineHeight={1.5}>
@@ -281,7 +287,16 @@ const Landing = () => {
                   justifyContent: "center",
                 }}
               >
-                <Typography variant='h4' mb={1.5} color='#092C4C'>
+                <Typography
+                  variant='h4'
+                  mb={1.5}
+                  color='#092C4C'
+                  sx={{
+                    fontWeight: "700px",
+                    fontSize: "40px",
+                    lineHeight: "44px",
+                  }}
+                >
                   The greatest delivery personnel you've ever encountered
                 </Typography>
                 <Typography variant='subtitle2' mb={{ xs: 4, md: 0 }} color='#092C4C'>
@@ -336,7 +351,16 @@ const Landing = () => {
                   justifyContent: "center",
                 }}
               >
-                <Typography variant='h4' mb={1.5} color='#092C4C'>
+                <Typography
+                  variant='h4'
+                  mb={1.5}
+                  color='#092C4C'
+                  sx={{
+                    fontWeight: "700px",
+                    fontSize: "40px",
+                    lineHeight: "44px",
+                  }}
+                >
                   Excellent riders and partners ready to deliver
                 </Typography>
                 <Typography variant='subtitle2' mb={{ xs: 2, md: 0 }} color='#092C4C'>
@@ -364,7 +388,16 @@ const Landing = () => {
                   justifyContent: "center",
                 }}
               >
-                <Typography variant='h4' mb={1.5} color='#092C4C'>
+                <Typography
+                  variant='h4'
+                  mb={1.5}
+                  color='#092C4C'
+                  sx={{
+                    fontWeight: "700px",
+                    fontSize: "40px",
+                    lineHeight: "44px",
+                  }}
+                >
                   Got a Bike?
                 </Typography>
                 <Typography variant='subtitle2' mb={{ xs: 2, md: 0 }} color='#092C4C'>
@@ -419,7 +452,8 @@ const Landing = () => {
           />
           <Typography
             variant='h4'
-            fontWeight={600}
+            fontWeight={700}
+            paddingBottom={8}
             fontSize={{ xs: 24, md: 32 }}
             textAlign='center'
           >
@@ -442,7 +476,14 @@ const Landing = () => {
                   readOnly
                 />
 
-                <Typography variant='subtitle2' my={5}>
+                <Typography
+                  variant='subtitle2'
+                  my={5}
+                  sx={{
+                    backgroundColor: "#F4F4F6",
+                    fontSize: "16px",
+                  }}
+                >
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia id accusantium
                   doloribus tenetur velit, facere recusandae et, repellat in consequuntur aliquid
                   inventore voluptates veritatis rem.
@@ -475,7 +516,14 @@ const Landing = () => {
                   readOnly
                 />
 
-                <Typography variant='subtitle2' my={5}>
+                <Typography
+                  variant='subtitle2'
+                  my={5}
+                  sx={{
+                    backgroundColor: "#F4F4F6",
+                    fontSize: "16px",
+                  }}
+                >
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia id accusantium
                   doloribus tenetur velit, facere recusandae et, repellat in consequuntur aliquid
                   inventore voluptates veritatis rem.
@@ -507,7 +555,14 @@ const Landing = () => {
                   readOnly
                 />
 
-                <Typography variant='subtitle2' my={5}>
+                <Typography
+                  variant='subtitle2'
+                  my={5}
+                  sx={{
+                    backgroundColor: "#F4F4F6",
+                    fontSize: "16px",
+                  }}
+                >
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia id accusantium
                   doloribus tenetur velit, facere recusandae et, repellat in consequuntur aliquid
                   inventore voluptates veritatis rem.
@@ -533,11 +588,20 @@ const Landing = () => {
 
         <Box className={classes.jumbotron} minHeight='45vh' py={2} px={4} textAlign='center'>
           <Stack>
-            <Typography variant='h4' color='#ffffff' mb={5}>
+            <Typography
+              variant='h4'
+              color='#ffffff'
+              mb={5}
+              sx={{
+                fontWeight: "700px",
+                width: "520px",
+                lineHeight: "44px",
+              }}
+            >
               Ready to send goods to your customer?
             </Typography>
 
-            <Stack direction='row' spacing={{ xs: 4, md: 8 }} justifyContent='center'>
+            <Stack direction='row' spacing={{ xs: 2, md: 6 }} justifyContent='center'>
               <Link to='#' component={RouterLink}>
                 <img className={classes.store} src={AppStore} alt='Install from Apple App Store' />
               </Link>
@@ -552,7 +616,15 @@ const Landing = () => {
 
             <Typography variant='caption' mt={6} mx='auto' color='#ffffff'>
               or{" "}
-              <Link component={RouterLink} to='#' color='inherit'>
+              <Link
+                component={RouterLink}
+                to='#'
+                color='inherit'
+                sx={{
+                  fontWeight: "500px",
+                  fontSize: "24px",
+                }}
+              >
                 Sign Up
               </Link>{" "}
               to start DSpatching
