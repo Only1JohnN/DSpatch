@@ -38,7 +38,7 @@ import { Logo } from "../assets";
 import { Button as Btn } from "./index";
 
 const drawerWidth = 240;
-const navItems = ["Company", "Tracking", "Partner with DSpatch", "Safety", "Support", "Help"];
+const navItems = ["Company", "Track your Order", "Partner with DSpatch", "Safety", "Support"];
 
 const Navbar = (props) => {
   const trigger = useScrollTrigger({
@@ -125,15 +125,6 @@ const Navbar = (props) => {
                     <ListItemButton
                       onClick={() => handleDrawerToggle()}
                       component={RouterLink}
-                      to='/what-we-offer'
-                      underline='none'
-                      divider={true}
-                    >
-                      <ListItemText primary='Our Offerings' />
-                    </ListItemButton>
-                    <ListItemButton
-                      onClick={() => handleDrawerToggle()}
-                      component={RouterLink}
                       to='/how-dspatch-works'
                       underline='none'
                       divider={companyMobileOpen ? true : false}
@@ -193,15 +184,6 @@ const Navbar = (props) => {
                     <ListItemButton
                       onClick={() => handleDrawerToggle()}
                       component={RouterLink}
-                      to='/courier'
-                      underline='none'
-                      divider={true}
-                    >
-                      <ListItemText primary='Couriers' />
-                    </ListItemButton>
-                    <ListItemButton
-                      onClick={() => handleDrawerToggle()}
-                      component={RouterLink}
                       to='/fleet-owner'
                       underline='none'
                       divider={partnersMobileOpen ? true : false}
@@ -217,7 +199,11 @@ const Navbar = (props) => {
               <ListItem
                 component={RouterLink}
                 underline='none'
-                to={item.toLowerCase()}
+                to={
+                  item.toLowerCase() === "track your order"
+                    ? "track-your-order"
+                    : item.toLowerCase()
+                }
                 key={key}
                 sx={{
                   "& .MuiListItemText-root": {
@@ -363,15 +349,6 @@ const Navbar = (props) => {
                         </MenuItem>
                         <MenuItem
                           component={RouterLink}
-                          to='/what-we-offer'
-                          onClick={handleDropdownClose}
-                          underline='none'
-                          divider={true}
-                        >
-                          Our Offerings
-                        </MenuItem>
-                        <MenuItem
-                          component={RouterLink}
                           to='/how-dspatch-works'
                           onClick={handleDropdownClose}
                           underline='none'
@@ -438,15 +415,6 @@ const Navbar = (props) => {
                         </MenuItem>
                         <MenuItem
                           component={RouterLink}
-                          to='/courier'
-                          onClick={handleDropdownClose}
-                          underline='none'
-                          divider={true}
-                        >
-                          Couriers
-                        </MenuItem>
-                        <MenuItem
-                          component={RouterLink}
                           to='/fleet-owner'
                           onClick={handleDropdownClose}
                           underline='none'
@@ -460,7 +428,11 @@ const Navbar = (props) => {
                   return (
                     <Button
                       component={RouterLink}
-                      to={item.toLowerCase()}
+                      to={
+                        item.toLowerCase() === "track your order"
+                          ? "track-your-order"
+                          : item.toLowerCase()
+                      }
                       underline='none'
                       key={index}
                       sx={{

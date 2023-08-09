@@ -145,39 +145,13 @@ const Landing = () => {
             >
               <Grid container direction={{ xs: "column", md: "row" }}>
                 <Grid xs>
-                  <Typography
-                    variant='h4'
-                    color='#ffffff'
-                    mb={1}
-                    sx={{
-                      fontWeight: "700px",
-                      marginBottom: "16px",
-                      width: { md: "429px" },
-                      marginLeft: "245px",
-                      padding: "24px",
-                    }}
-                  >
+                  <Typography variant='h4' color='#ffffff' mb={1}>
                     Become a DSpatcher and get paid
                   </Typography>
-                  <Typography
-                    variant='subtitle2'
-                    color='#ffffff'
-                    sx={{
-                      fontSize: "18px",
-                      marginLeft: "245px",
-                      marginBottom: "5px",
-                    }}
-                  >
+                  <Typography variant='subtitle2' color='#ffffff'>
                     Drive on the platform with the most active rider network.
                   </Typography>
-                  <Typography
-                    variant='subtitle2'
-                    color='#ffffff'
-                    mb={{ xs: 3, md: 0 }}
-                    sx={{
-                      marginLeft: "245px",
-                    }}
-                  >
+                  <Typography variant='subtitle2' color='#ffffff' mb={{ xs: 3, md: 0 }}>
                     Be your own boss and choose your own schedule.
                   </Typography>
                 </Grid>
@@ -196,9 +170,7 @@ const Landing = () => {
                       backgroundColor: "#ffffff",
                       color: "#092C4C",
                       height: "fit-content",
-                      fontWeight: "700px",
-                      width: "230px",
-                      fontSize: "16px",
+
                       "&:hover": {
                         backgroundColor: "#E9E9E9",
                       },
@@ -452,8 +424,7 @@ const Landing = () => {
           />
           <Typography
             variant='h4'
-            fontWeight={700}
-            paddingBottom={8}
+            fontWeight={600}
             fontSize={{ xs: 24, md: 32 }}
             textAlign='center'
           >
@@ -476,14 +447,7 @@ const Landing = () => {
                   readOnly
                 />
 
-                <Typography
-                  variant='subtitle2'
-                  my={5}
-                  sx={{
-                    backgroundColor: "#F4F4F6",
-                    fontSize: "16px",
-                  }}
-                >
+                <Typography variant='subtitle2' my={5}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia id accusantium
                   doloribus tenetur velit, facere recusandae et, repellat in consequuntur aliquid
                   inventore voluptates veritatis rem.
@@ -516,14 +480,7 @@ const Landing = () => {
                   readOnly
                 />
 
-                <Typography
-                  variant='subtitle2'
-                  my={5}
-                  sx={{
-                    backgroundColor: "#F4F4F6",
-                    fontSize: "16px",
-                  }}
-                >
+                <Typography variant='subtitle2' my={5}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia id accusantium
                   doloribus tenetur velit, facere recusandae et, repellat in consequuntur aliquid
                   inventore voluptates veritatis rem.
@@ -555,14 +512,7 @@ const Landing = () => {
                   readOnly
                 />
 
-                <Typography
-                  variant='subtitle2'
-                  my={5}
-                  sx={{
-                    backgroundColor: "#F4F4F6",
-                    fontSize: "16px",
-                  }}
-                >
+                <Typography variant='subtitle2' my={5}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia id accusantium
                   doloribus tenetur velit, facere recusandae et, repellat in consequuntur aliquid
                   inventore voluptates veritatis rem.
@@ -588,20 +538,11 @@ const Landing = () => {
 
         <Box className={classes.jumbotron} minHeight='45vh' py={2} px={4} textAlign='center'>
           <Stack>
-            <Typography
-              variant='h4'
-              color='#ffffff'
-              mb={5}
-              sx={{
-                fontWeight: "700px",
-                width: "520px",
-                lineHeight: "44px",
-              }}
-            >
+            <Typography variant='h4' color='#ffffff' mb={5}>
               Ready to send goods to your customer?
             </Typography>
 
-            <Stack direction='row' spacing={{ xs: 2, md: 6 }} justifyContent='center'>
+            <Stack direction='row' spacing={{ xs: 4, md: 8 }} justifyContent='center'>
               <Link to='#' component={RouterLink}>
                 <img className={classes.store} src={AppStore} alt='Install from Apple App Store' />
               </Link>
