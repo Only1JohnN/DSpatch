@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 // Material imports
 import {
@@ -36,6 +36,7 @@ import theme from "../assets/theme";
 import { Logo } from "../assets";
 
 import { Button as Btn } from "./index";
+import { AppContext } from "../contexts/AppContext";
 
 const drawerWidth = 240;
 const navItems = ["Company", "Track your Order", "Partner with DSpatch", "Safety", "Support"];
@@ -54,6 +55,8 @@ const Navbar = (props) => {
   const partnersOpen = Boolean(partnersAnchor);
   const [companyMobileOpen, setCompanyMobileOpen] = useState(false);
   const [partnersMobileOpen, setPartnersMobileOpen] = useState(false);
+
+  const { signUpModal, setSignUpModal } = useContext(AppContext);
 
   const handleCollapseToggle = (context) => {
     context == "company"
@@ -242,8 +245,7 @@ const Navbar = (props) => {
         </ListItem>
         <ListItem sx={{ justifyContent: "center" }}>
           <Btn
-            component={RouterLink}
-            to='signup'
+            onClick={() => setSignUpModal(!signUpModal)}
             sx={{
               fontSize: "13px",
               borderRadius: "3px",
@@ -472,8 +474,7 @@ const Navbar = (props) => {
               </Btn>
 
               <Btn
-                component={RouterLink}
-                to='/signup'
+                onClick={() => setSignUpModal(!signUpModal)}
                 sx={{ fontSize: "13px", borderRadius: "3px", border: "1.5px" }}
               >
                 Sign Up

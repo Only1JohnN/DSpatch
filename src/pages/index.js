@@ -3,7 +3,6 @@ export { default as Terms } from "./Terms/Terms";
 export { default as Tracking } from "./Tracking/Tracking";
 export { default as About } from "./AboutUs/AboutUs";
 export { default as SignIn } from "./SignIn/index";
-// export { default as CustomerSignUp } from "./SignUp/Customer";
 export { default as Safety } from "./Safety/Safety";
 export { default as Help } from "./Help/Help";
 export { default as ForgotPassword } from "./ForgotPassword/ForgotPassword";

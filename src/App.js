@@ -3,6 +3,9 @@ import { useLocation } from "react-router-dom";
 
 import { Navbar, Footer } from "./components";
 import Routes from "./Routes";
+import AppContextProvider from "./contexts/AppContext";
+
+import { SignUpDialog } from "./pages/SignUp";
 
 function App() {
   const location = useLocation();
@@ -12,11 +15,14 @@ function App() {
   }, [location]);
 
   return (
-    <div className='App'>
-      <Navbar />
-      <Routes location={location} />
-      <Footer />
-    </div>
+    <AppContextProvider>
+      <div className='App'>
+        <Navbar />
+        <Routes location={location} />
+        <SignUpDialog />
+        <Footer />
+      </div>
+    </AppContextProvider>
   );
 }
 

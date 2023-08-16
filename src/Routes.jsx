@@ -16,7 +16,7 @@ const Routes = ({ location }) => {
       <Route exact path='safety/' element={<Safety />} />
       <Route exact path='signin/forgotpassword/' element={<ForgotPassword />} />
       {/* <Route exact path='support/' element={<Support />} /> */}
-      <Route exact path='signup/' element={<Customer />} />
+      <Route exact path='customer/' element={<Customer />} />
       <Route exact path='fleet-owner/' element={<FleetOwner />} />
       <Route exact path='courier/' element={<Rider />} />
       <Route exact path='support/' element={<Help />} />
