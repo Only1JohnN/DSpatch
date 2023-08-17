@@ -51,7 +51,7 @@ const signInSchema = Yup.object().shape({
   }),
 });
 
-const steps = ["Select campaign settings", "Create an ad group", "Create an ad"];
+const steps = ["Personal Information", "Documents", "Payment Details"];
 
 const FleetOwnersSignUp = () => {
   const classes = useStyles();
