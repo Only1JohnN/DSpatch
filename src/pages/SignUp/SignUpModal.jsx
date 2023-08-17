@@ -140,7 +140,7 @@ const SignUpModal = () => {
               onClick={() => handleOpen()}
               endIcon={<ArrowRightIcon sx={{ fontSize: "30px !important" }} />}
             >
-              Sign up as a Fleet Owner"
+              Sign up as a Fleet Owner
             </Button>
           </ListItem>
 
@@ -166,7 +166,7 @@ const SignUpModal = () => {
               onClick={() => handleOpen()}
               endIcon={<ArrowRightIcon sx={{ fontSize: "30px !important" }} />}
             >
-              Sign up as a DSpatcher"
+              Sign up as a DSpatcher
             </Button>
           </ListItem>
         </List>
