@@ -5,14 +5,16 @@ import {
   DialogTitle,
   List,
   ListItem,
-  ListItemButton,
-  ListItemText,
   Slide,
   IconButton,
+  ThemeProvider,
 } from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+
+// Assets
+import theme from "../../assets/theme";
 
 // React-Router-Dom
 import { Link as RouterLink } from "react-router-dom";
@@ -29,7 +31,8 @@ function CustomDialogTitle(props) {
     <DialogTitle
       sx={{
         m: 0,
-        p: 2,
+        pb: 3,
+        px: 0,
         color: "rgba(15, 17, 65, 0.7)",
         fontSize: "24px",
         fontWeight: "400",
@@ -64,7 +67,7 @@ const SignUpModal = () => {
   };
 
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <MUIDialog
         open={signUpModal}
         TransitionComponent={Transition}
@@ -75,10 +78,10 @@ const SignUpModal = () => {
           backdropFilter: "blur(5px)",
 
           "& .MuiDialog-paper": {
-            py: 4,
-            px: 3,
+            py: { xs: 7, md: "88px" },
+            px: { xs: 2, md: "40px" },
             minWidth: "80vw",
-            height: "50vh",
+            // height: "50vh",
             justifyContent: "center",
           },
         }}
@@ -90,24 +93,25 @@ const SignUpModal = () => {
           <ListItem disableGutters>
             <Button
               sx={{
-                backgroundColor: "rgba(0, 0, 0, 0)",
-                color: "#092C4C",
-                fontSize: "13px",
-                borderRadius: "3px",
-                border: "1.5px",
+                fontSize: { md: "22px" },
+                fontWeight: "400",
+                lineHeight: { md: "22.4px" },
+                borderColor: "#0F1141",
                 width: "100%",
                 justifyContent: "space-between",
-                px: 8,
-                py: 2.5,
+                px: { xs: "24px", md: "48px" },
+                py: { md: "25px !important" },
+                mb: "20px",
 
                 "$:hover": {
                   backgroundColor: "#CEDFDB",
                 },
               }}
+              variant='outlined'
               component={RouterLink}
               to='customer/'
               onClick={() => handleOpen()}
-              endIcon={<ArrowRightIcon sx={{ fontSize: 40 }} />}
+              endIcon={<ArrowRightIcon sx={{ fontSize: "30px !important" }} />}
             >
               Sign up as a Customer
             </Button>
@@ -116,24 +120,25 @@ const SignUpModal = () => {
           <ListItem disableGutters>
             <Button
               sx={{
-                backgroundColor: "rgba(0, 0, 0, 0)",
-                color: "#092C4C",
-                fontSize: "13px",
-                borderRadius: "3px",
-                border: "1.5px",
+                fontSize: { md: "22px" },
+                fontWeight: "400",
+                lineHeight: { md: "22.4px" },
+                borderColor: "#0F1141",
                 width: "100%",
                 justifyContent: "space-between",
-                px: 8,
-                py: 2.5,
+                px: { xs: "24px", md: "48px" },
+                py: { md: "25px !important" },
+                mb: "20px",
 
                 "$:hover": {
                   backgroundColor: "#CEDFDB",
                 },
               }}
+              variant='outlined'
               component={RouterLink}
               to='fleet-owner/'
               onClick={() => handleOpen()}
-              endIcon={<ArrowRightIcon sx={{ fontSize: 40 }} />}
+              endIcon={<ArrowRightIcon sx={{ fontSize: "30px !important" }} />}
             >
               Sign up as a Fleet Owner"
             </Button>
@@ -142,31 +147,31 @@ const SignUpModal = () => {
           <ListItem disableGutters>
             <Button
               sx={{
-                backgroundColor: "rgba(0, 0, 0, 0)",
-                color: "#092C4C",
-                fontSize: "13px",
-                borderRadius: "3px",
-                border: "1.5px",
+                fontSize: { md: "22px" },
+                fontWeight: "400",
+                lineHeight: { md: "22.4px" },
+                borderColor: "#0F1141",
                 width: "100%",
                 justifyContent: "space-between",
-                px: 8,
-                py: 2.5,
+                px: { xs: "24px", md: "48px" },
+                py: { md: "25px !important" },
 
                 "$:hover": {
                   backgroundColor: "#CEDFDB",
                 },
               }}
+              variant='outlined'
               component={RouterLink}
               to='courier/'
               onClick={() => handleOpen()}
-              endIcon={<ArrowRightIcon sx={{ fontSize: 40 }} />}
+              endIcon={<ArrowRightIcon sx={{ fontSize: "30px !important" }} />}
             >
               Sign up as a DSpatcher"
             </Button>
           </ListItem>
         </List>
       </MUIDialog>
-    </div>
+    </ThemeProvider>
   );
 };
 

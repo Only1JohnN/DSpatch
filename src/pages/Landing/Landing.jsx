@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // Material imports
 import {
@@ -37,6 +37,7 @@ import {
 import { Button } from "../../components";
 
 import useStyles from "./styles";
+import { AppContext } from "../../contexts/AppContext";
 
 const services = [
   {
@@ -60,6 +61,8 @@ const services = [
 const Landing = () => {
   const classes = useStyles();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+
+  const { signUpModal, setSignUpModal } = useContext(AppContext);
 
   return (
     <ThemeProvider theme={theme}>
@@ -340,6 +343,7 @@ const Landing = () => {
                   they are spread around over every city.
                 </Typography>
                 <Button
+                  onClick={() => setSignUpModal(!signUpModal)}
                   sx={{
                     width: "fit-content",
                     mt: { xs: 0, md: 2 },
@@ -378,6 +382,7 @@ const Landing = () => {
                   your own schedule.
                 </Typography>
                 <Button
+                  onClick={() => setSignUpModal(!signUpModal)}
                   sx={{
                     width: "fit-content",
                     mt: { xs: 0, md: 2 },

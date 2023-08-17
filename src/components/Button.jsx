@@ -5,13 +5,12 @@ import { Button as MUIbtn } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const Button = styled(MUIbtn)({
-  borderRadius: "1px",
+  borderRadius: "3px",
   backgroundColor: "#092C4C",
-  borderColor: "#092C4C",
   color: "#ffffff",
-  padding: "10px 20px",
+  padding: "16px 80px",
   textTransform: "none",
-  fontsize: "12px",
+  fontsize: "16px",
   fontFamily: [
     "Inter",
     "-apple-system",
@@ -28,8 +27,19 @@ const Button = styled(MUIbtn)({
   ].join(","),
 
   "&:hover": {
-    backgroundColor: "#1E429F",
-    borderColor: "#1E429F",
+    backgroundColor: "#05182A",
+  },
+
+  "&.MuiButton-outlined": {
+    color: "#092C4C",
+    backgroundColor: "#00000000",
+    border: "2px solid #092C4C",
+    paddingTop: "12.6px",
+    paddingBottom: "12.6px",
+
+    "&.MuiButton-outlined:hover": {
+      backgroundColor: "#092C4C4D",
+    },
   },
 });
 

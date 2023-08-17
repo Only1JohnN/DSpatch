@@ -18,13 +18,7 @@ import {
   MenuItem,
   Collapse,
 } from "@mui/material";
-import {
-  ArrowDropDown,
-  ArrowDropUp,
-  ExpandLess,
-  ExpandMore,
-  Menu as MenuIcon,
-} from "@mui/icons-material";
+import { ArrowDropDown, ExpandLess, ExpandMore, Menu as MenuIcon } from "@mui/icons-material";
 import { ThemeProvider } from "@mui/material/styles";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 
@@ -169,7 +163,7 @@ const Navbar = (props) => {
                     <ListItemButton
                       onClick={() => handleDrawerToggle()}
                       component={RouterLink}
-                      to='/dspatcher'
+                      to='/courier'
                       underline='none'
                       divider={true}
                     >
@@ -228,15 +222,8 @@ const Navbar = (props) => {
             component={RouterLink}
             to='signIn'
             sx={{
-              backgroundColor: "rgba(0, 0, 0, 0)",
-              color: "#092C4C",
               fontSize: "13px",
-              borderRadius: "3px",
-              border: "1.5px",
-
-              "$:hover": {
-                backgroundColor: "#CEDFDB",
-              },
+              padding: "14px 32px",
             }}
             variant='outlined'
           >
@@ -248,8 +235,7 @@ const Navbar = (props) => {
             onClick={() => setSignUpModal(!signUpModal)}
             sx={{
               fontSize: "13px",
-              borderRadius: "3px",
-              border: "1.5px",
+              padding: "14px 32px",
             }}
           >
             Sign Up
@@ -311,6 +297,11 @@ const Navbar = (props) => {
                         anchorEl={companyAnchor}
                         open={companyOpen}
                         onClose={handleDropdownClose}
+                        MenuListProps={{
+                          sx: {
+                            p: 0,
+                          },
+                        }}
                         PaperProps={{
                           sx: {
                             mt: 0.5,
@@ -381,6 +372,11 @@ const Navbar = (props) => {
                         anchorEl={partnersAnchor}
                         open={partnersOpen}
                         onClose={handleDropdownClose}
+                        MenuListProps={{
+                          sx: {
+                            p: 0,
+                          },
+                        }}
                         PaperProps={{
                           sx: {
                             mt: 0.5,
@@ -399,7 +395,7 @@ const Navbar = (props) => {
                       >
                         <MenuItem
                           component={RouterLink}
-                          to='/dspatcher'
+                          to='/courier'
                           onClick={handleDropdownClose}
                           underline='none'
                           divider={true}
@@ -457,16 +453,9 @@ const Navbar = (props) => {
                 component={RouterLink}
                 to='/signin'
                 sx={{
-                  backgroundColor: "rgba(0, 0, 0, 0)",
-                  color: "#092C4C",
+                  fontSize: "14px",
+                  padding: "14px 32px",
                   marginRight: "10px",
-                  fontSize: "13px",
-                  borderRadius: "3px",
-                  border: "1.5px",
-
-                  "&:hover": {
-                    backgroundColor: "#CEDFDB",
-                  },
                 }}
                 variant='outlined'
               >
@@ -475,7 +464,10 @@ const Navbar = (props) => {
 
               <Btn
                 onClick={() => setSignUpModal(!signUpModal)}
-                sx={{ fontSize: "13px", borderRadius: "3px", border: "1.5px" }}
+                sx={{
+                  fontSize: "14px",
+                  padding: "14px 32px",
+                }}
               >
                 Sign Up
               </Btn>

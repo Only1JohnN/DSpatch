@@ -6,6 +6,10 @@ import Routes from "./Routes";
 import AppContextProvider from "./contexts/AppContext";
 
 import { SignUpDialog } from "./pages/SignUp";
+import { ThemeProvider } from "@mui/material";
+
+// Assets
+import theme from "./assets/theme";
 
 function App() {
   const location = useLocation();
@@ -17,10 +21,12 @@ function App() {
   return (
     <AppContextProvider>
       <div className='App'>
-        <Navbar />
-        <Routes location={location} />
-        <SignUpDialog />
-        <Footer />
+        <ThemeProvider theme={theme}>
+          <Navbar />
+          <Routes location={location} />
+          <SignUpDialog />
+          <Footer />
+        </ThemeProvider>
       </div>
     </AppContextProvider>
   );
