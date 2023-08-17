@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Step, StepLabel, Stepper } from "@mui/material";
 import React from "react";
 import TextInput from "../../../components/input";
 import Checkbox from "../../../components/CheckBox";
+
 // Material imports
 import { Box, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
@@ -11,18 +12,17 @@ import { ThemeProvider } from "@mui/material/styles";
 import useStyles from "./styles";
 import theme from "../../../assets/theme";
 import {
-  SignInDesign,
   FooterLogo,
   LineDesign,
   DspatchWhiteLogo,
   WhatsAppLogo,
   FleetDesign,
-  SgnUpBike,
 } from "../../../assets";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import SelectInput from "../../../components/SelectInput";
+import IteratorIcon, { IteratorConnector } from "../../../components/Iterator";
 
 export const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -50,6 +50,8 @@ const signInSchema = Yup.object().shape({
     then: Yup.string().oneOf([Yup.ref("password")], "Passwords must match"),
   }),
 });
+
+const steps = ["Select campaign settings", "Create an ad group", "Create an ad"];
 
 const FleetOwnersSignUp = () => {
   const classes = useStyles();
@@ -594,6 +596,14 @@ const FleetOwnersSignUp = () => {
           </Grid>
         </Grid>
       </Box>
+
+      <Stepper alternativeLabel activeStep={1} connector={<IteratorConnector />}>
+        {steps.map((label) => (
+          <Step key={label}>
+            <StepLabel StepIconComponent={IteratorIcon}>{label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
     </ThemeProvider>
   );
 };
