@@ -1,8 +1,18 @@
 import { useState } from "react";
-import { CircularProgress, Step, StepLabel, Stepper } from "@mui/material";
+import {
+  Button,
+  Card,
+  CircularProgress,
+  Paper,
+  Stack,
+  Step,
+  StepLabel,
+  Stepper,
+} from "@mui/material";
 import React from "react";
 import TextInput from "../../../components/input";
 import Checkbox from "../../../components/CheckBox";
+import "./styles.css";
 
 // Material imports
 import { Box, Container, Typography } from "@mui/material";
@@ -17,12 +27,15 @@ import {
   DspatchWhiteLogo,
   WhatsAppLogo,
   FleetDesign,
+  FileFill,
+  FileFillDark,
 } from "../../../assets";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import SelectInput from "../../../components/SelectInput";
 import IteratorIcon, { IteratorConnector } from "../../../components/Iterator";
+import { Done } from "@mui/icons-material";
 
 export const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -597,13 +610,421 @@ const FleetOwnersSignUp = () => {
         </Grid>
       </Box>
 
-      <Stepper alternativeLabel activeStep={1} connector={<IteratorConnector />}>
+      {/* <Stepper alternativeLabel activeStep={1} connector={<IteratorConnector />}>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel StepIconComponent={IteratorIcon}>{label}</StepLabel>
           </Step>
         ))}
-      </Stepper>
+      </Stepper> */}
+
+      {/* Documents step section */}
+      <Container
+        sx={{
+          mt: 15,
+        }}
+      >
+        <Stepper
+          alternativeLabel
+          activeStep={2}
+          connector={<IteratorConnector />}
+          sx={{
+            width: "79%",
+            margin: "0 auto",
+          }}
+        >
+          {steps.map((label) => (
+            <Step key={label}>
+              <StepLabel
+                StepIconComponent={IteratorIcon}
+                sx={{ fontSize: "18px", lineHeight: "25.2px" }}
+              >
+                {label}
+              </StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+
+        {/* Main text */}
+        <Container
+          sx={{
+            width: "69%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 2,
+            mt: 18,
+          }}
+        >
+          <Typography
+            variant='h4'
+            color={"#092C4C"}
+            sx={{
+              fontSize: { xs: "30px", md: "48px" },
+              fontWeight: "700",
+              lineHeight: "52.8px",
+            }}
+          >
+            Documents
+          </Typography>
+
+          <Typography
+            variant='p'
+            color={"#092C4C"}
+            sx={{
+              fontSize: "20px",
+              fontWeight: "400",
+              lineHeight: "28px",
+              textAlign: "center",
+            }}
+          >
+            We must request certain documents from you as part of the sign-up process for becoming a
+            Fleet Owner, in accordance with legal requirements.
+          </Typography>
+        </Container>
+
+        {/* Input fields */}
+        <Stack spacing={6} sx={{ mt: 12, width: "100%", alignItems: "center" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              width: "62%",
+            }}
+          >
+            <Typography variant='p' gutterBottom>
+              Image of Vehicle 1
+            </Typography>
+
+            <Box
+              sx={{
+                position: "relative",
+                display: "inline-block",
+                padding: "5px 5px 5px 20px",
+                border: "0.85px solid #BDBDBD",
+                borderRadius: "3px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <label
+                htmlFor='file'
+                style={{
+                  display: "inline-block",
+                  color: "#828282",
+                  fontSize: "13.596px",
+                }}
+              >
+                Select File
+              </label>
+              <input type='file' id='file' name='file' />
+              <button id='btn1'>Browse</button>
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              width: "62%",
+            }}
+          >
+            <Typography variant='p' gutterBottom>
+              Image of Vehicle 2
+            </Typography>
+
+            <Box
+              sx={{
+                position: "relative",
+                display: "inline-block",
+                border: "0.85px solid #BDBDBD",
+                borderRadius: "3px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <label
+                htmlFor='file'
+                style={{
+                  color: "#FFF",
+                  background: "#092C4C",
+                  borderRadius: "3px 0px 0px 3px",
+                  width: "212.435px",
+                  height: "47.875px",
+                  alignItems: "center",
+                  display: "flex",
+                  gap: "6px",
+                  paddingLeft: 20,
+                }}
+              >
+                <img src={FileFill} alt='File image' />
+                <Typography
+                  variant='p'
+                  sx={{
+                    fontSize: "13.596px",
+                    fontWeight: 700,
+                    lineHeight: "19.034px",
+                  }}
+                >
+                  Sample.jpg
+                </Typography>
+              </label>
+              <input type='file' id='file' name='file' />
+              <Done
+                sx={{
+                  background: "#092C4C",
+                  color: "#fff",
+                  display: "flex",
+                  borderRadius: "50%",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "3px",
+                  width: "27.192px",
+                  height: "27.192px",
+                  marginRight: { xs: "1px", sm: "20px", md: "35px" },
+                }}
+              />
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              width: "62%",
+              display: "flex",
+              justifyContent: "end",
+              alignItems: "center",
+            }}
+          >
+            <Button
+              variant='contained'
+              sx={{
+                textTransform: "none",
+                padding: "11.503px 28.337px 11.497px 26.663px",
+                borderRadius: "3.399px",
+                fontSize: "11.896px",
+                fontWeight: 700,
+                lineHeight: "16.655px",
+                background: "#092C4C",
+              }}
+              disableElevation
+            >
+              Add Vehicle
+            </Button>
+          </Box>
+
+          <Stack
+            spacing={1.2}
+            sx={{
+              width: "62%",
+            }}
+          >
+            <Card
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 0.7,
+              }}
+              elevation={0}
+            >
+              <Typography
+                variant='p'
+                sx={{
+                  fontWeight: "600",
+                  fontSize: "16px",
+                  lineHeight: "30px",
+                  color: "#092C4C",
+                }}
+              >
+                Nipost License or CAC Registration
+              </Typography>
+              <Typography
+                variant='p'
+                sx={{
+                  fontWeight: "400",
+                  fontSize: "16px",
+                  color: "#092C4C",
+                }}
+              >
+                Upload one of the two documents here
+              </Typography>
+            </Card>
+
+            <Box
+              sx={{
+                position: "relative",
+                display: "inline-block",
+                border: "0.85px solid #BDBDBD",
+                borderRadius: "3px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <label
+                htmlFor='file'
+                style={{
+                  color: "#092C4C",
+                  width: "212.435px",
+                  height: "47.875px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  paddingLeft: 20,
+                }}
+              >
+                <img src={FileFillDark} alt='File image' />
+                <Typography
+                  variant='p'
+                  sx={{
+                    fontSize: "16px",
+                    fontWeight: 700,
+                    lineHeight: "22.4px",
+                  }}
+                >
+                  Sample.jpg
+                </Typography>
+              </label>
+              <input type='file' id='file' name='file' />
+              <Done
+                sx={{
+                  background: "#092C4C",
+                  color: "#fff",
+                  display: "flex",
+                  borderRadius: "50%",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "3px",
+                  width: "27.192px",
+                  height: "27.192px",
+                  marginRight: { xs: "1px", sm: "20px", md: "35px" },
+                }}
+              />
+            </Box>
+          </Stack>
+        </Stack>
+
+        {/* Continue button */}
+        <Stack
+          sx={{
+            width: "100%",
+            alignItems: "center",
+            mt: 6,
+            mb: 30,
+          }}
+        >
+          <Button
+            variant='contained'
+            disableElevation
+            sx={{
+              width: "62%",
+              marginBlock: "50px",
+              fontSize: "20px",
+              fontWeight: "700",
+              lineHeight: "28px",
+              textTransform: "none",
+              padding: "16px 0",
+            }}
+          >
+            Continue
+          </Button>
+        </Stack>
+      </Container>
+
+      {/* Payment Details step section */}
+      <Container
+        sx={{
+          mt: 15,
+        }}
+      >
+        <Stepper
+          alternativeLabel
+          activeStep={3}
+          connector={<IteratorConnector />}
+          sx={{
+            width: "79%",
+            margin: "0 auto",
+          }}
+        >
+          {steps.map((label) => (
+            <Step key={label}>
+              <StepLabel
+                StepIconComponent={IteratorIcon}
+                sx={{ fontSize: "18px", lineHeight: "25.2px" }}
+              >
+                {label}
+              </StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+
+        {/* Main text */}
+        <Container
+          sx={{
+            width: "69%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 2,
+            mt: 18,
+          }}
+        >
+          <Typography
+            variant='h4'
+            color={"#092C4C"}
+            sx={{
+              fontSize: { xs: "30px", md: "48px" },
+              fontWeight: "700",
+              lineHeight: "52.8px",
+            }}
+          >
+            Payment Details
+          </Typography>
+
+          <Typography
+            variant='p'
+            color={"#092C4C"}
+            sx={{
+              fontSize: "20px",
+              fontWeight: "400",
+              lineHeight: "28px",
+              textAlign: "center",
+            }}
+          >
+            We must request certain documents from you as part of the sign-up process for becoming a
+            Fleet Owner, in accordance with legal requirements.
+          </Typography>
+        </Container>
+
+        {/* Continue button */}
+        <Stack
+          sx={{
+            width: "100%",
+            alignItems: "center",
+            mt: 90,
+            mb: 20,
+          }}
+        >
+          <Button
+            variant='contained'
+            disableElevation
+            sx={{
+              width: "62%",
+              marginBlock: "50px",
+              fontSize: "20px",
+              fontWeight: "700",
+              lineHeight: "28px",
+              textTransform: "none",
+              padding: "16px 0",
+            }}
+          >
+            Continue
+          </Button>
+        </Stack>
+      </Container>
     </ThemeProvider>
   );
 };
