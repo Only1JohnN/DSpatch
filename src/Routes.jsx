@@ -3,6 +3,7 @@ import { Routes as DOMRoutes, Route } from "react-router-dom";
 
 import { LandingPage, Terms, Tracking, About, SignIn, Safety, Help, ForgotPassword } from "./pages";
 import { Customer, FleetOwner, Rider } from "./pages/SignUp";
+import HowDSpatchWorks from "./pages/HowDSpatchWorks/HowDSpatchWorks";
 
 const Routes = ({ location }) => {
   return (
@@ -19,6 +20,8 @@ const Routes = ({ location }) => {
       <Route exact path='fleet-owner/' element={<FleetOwner />} />
       <Route exact path='courier/' element={<Rider />} />
       <Route exact path='support/' element={<Help />} />
+
+      <Route exact path='/how-dspatch-works' element={<HowDSpatchWorks />} />
     </DOMRoutes>
   );
 };

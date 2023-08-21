@@ -46,7 +46,8 @@ import DeliveryTracking from "./images/delivery_tracking.webp";
 import Insured from "./images/insured.jpeg";
 import Verify from "./images/verify.jpg";
 import CustomerSupport from "./images/247Support.jpg";
-import Confidential from "./images/confidentiality.jpg"
+import Confidential from "./images/confidentiality.jpg";
+import StepperLine from "./images/stepper.png";
 
 export {
   Logo,
@@ -96,5 +97,6 @@ export {
   Insured,
   Verify,
   CustomerSupport,
-  Confidential
+  Confidential,
+  StepperLine,
 };
