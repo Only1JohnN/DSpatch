@@ -13,7 +13,7 @@ export const IteratorConnector = styled(StepConnector)(({ theme }) => ({
   },
   [`&.${stepConnectorClasses.completed}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      backgroundImage: "#092C4C",
+      backgroundColor: "#092C4C",
     },
   },
   [`& .${stepConnectorClasses.line}`]: {
