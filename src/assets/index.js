@@ -48,6 +48,8 @@ import Verify from "./images/verify.jpg";
 import CustomerSupport from "./images/247Support.jpg";
 import Confidential from "./images/confidentiality.jpg";
 import StepperLine from "./images/stepper.png";
+import FileFill from "./svgs/File-fill.svg";
+import FileFillDark from "./svgs/File-fill-dark.svg";
 
 export {
   Logo,
@@ -99,4 +101,6 @@ export {
   CustomerSupport,
   Confidential,
   StepperLine,
+  FileFill,
+  FileFillDark,
 };
