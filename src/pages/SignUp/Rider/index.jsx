@@ -4,16 +4,41 @@ import React from "react";
 import TextInput from "../../../components/input";
 import Checkbox from "../../../components/CheckBox";
 // Material imports
-import { Box, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  Step,
+  Stepper,
+  StepLabel,
+  Stack,
+  Button,
+  Card,
+  Select,
+  FormControl,
+  MenuItem,
+  InputLabel,
+  TextField,
+} from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { ThemeProvider } from "@mui/material/styles";
 
 import useStyles from "./styles";
 import theme from "../../../assets/theme";
-import { FooterLogo, LineDesign, DspatchWhiteLogo, WhatsAppLogo, SgnUpBike } from "../../../assets";
+import {
+  FooterLogo,
+  LineDesign,
+  DspatchWhiteLogo,
+  WhatsAppLogo,
+  SgnUpBike,
+  FileFill,
+  FileFillDark,
+} from "../../../assets";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import IteratorIcon, { IteratorConnector } from "../../../components/Iterator";
+import { Done } from "@mui/icons-material";
 
 export const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -42,6 +67,14 @@ const signInSchema = Yup.object().shape({
   }),
 });
 
+const steps = [
+  "Personal Information",
+  "Vehicle Information",
+  "Private & licensing information",
+  "Documents",
+  "Payment Details",
+];
+
 const RiderSignUp = () => {
   const classes = useStyles();
   const [loading, setLoading] = useState(false);
@@ -69,6 +102,21 @@ const RiderSignUp = () => {
       }, 2000);
     },
   });
+
+  // step styles
+  const [activeStep, setActiveStep] = useState(1);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    window.scrollTo(0, 1590);
+  };
+
+  // select styles
+  const [sinoki, setSinoki] = React.useState("");
+
+  const handleChange = (event) => {
+    setSinoki(event.target.value);
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -484,7 +532,7 @@ const RiderSignUp = () => {
                         fontWeight: "400",
                         fontSize: "20px",
                         color: "#092C4C",
-                        marginBottom: ".5rem",
+                        marginBottom: "4rem",
                       }}
                     >
                       <Checkbox
@@ -500,24 +548,7 @@ const RiderSignUp = () => {
                         Use for DSpatch before continuing.
                       </Checkbox>
                     </div>
-                    <div
-                      style={{
-                        fontWeight: "400",
-                        fontSize: "20px",
-                        color: "#092C4C",
-                        marginBottom: "4rem",
-                      }}
-                    >
-                      <Checkbox
-                        id='isVehicle'
-                        onChange={formik.handleChange}
-                        name='isVehicle'
-                        {...formik.getFieldProps("isVehicle")}
-                        onClick={() => {}}
-                      >
-                        I have a vehicle to ride
-                      </Checkbox>
-                    </div>
+
                     <button
                       type='submit'
                       style={{
@@ -584,6 +615,1080 @@ const RiderSignUp = () => {
           </Grid>
         </Grid>
       </Box>
+
+      {/* Page stepper */}
+      <Container
+        sx={{
+          mt: 15,
+        }}
+      >
+        <Stepper
+          activeStep={activeStep}
+          alternativeLabel
+          connector={<IteratorConnector />}
+          sx={{
+            width: { xs: "100%", sm: "90%", md: "90%" },
+            margin: "0 auto",
+          }}
+        >
+          {steps.map((label, index) => {
+            return (
+              <Step key={label}>
+                <StepLabel
+                  sx={{ fontSize: "18px", lineHeight: "25.2px" }}
+                  StepIconComponent={IteratorIcon}
+                >
+                  {label}
+                </StepLabel>
+              </Step>
+            );
+          })}
+        </Stepper>
+      </Container>
+
+      {activeStep === 1 ? (
+        // Vehicle step section
+        <Container>
+          {/* Main text */}
+          <Container
+            sx={{
+              width: { xs: "100%", sm: "80%", md: "53%" },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 2,
+              mt: { xs: 8, sm: 12, md: 16 },
+            }}
+          >
+            <Typography
+              variant='h4'
+              color={"#092C4C"}
+              sx={{
+                fontSize: { xs: "30px", md: "48px" },
+                fontWeight: "700",
+                lineHeight: "52.8px",
+              }}
+            >
+              Vehicle Information
+            </Typography>
+
+            <Typography
+              variant='p'
+              color={"#092C4C"}
+              sx={{
+                fontSize: "20px",
+                fontWeight: "400",
+                lineHeight: "28px",
+                textAlign: { xs: "left", sm: "center" },
+              }}
+            >
+              Only your first name and vehicle details are visible to clients during the booking
+            </Typography>
+          </Container>
+
+          {/* Input fields */}
+          <Stack
+            spacing={{ xs: 2, md: 4 }}
+            sx={{ mt: { xs: 6, sm: 9, md: 12 }, width: "100%", alignItems: "center" }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 1.8,
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Typography
+                variant='p'
+                sx={{
+                  fontSize: "20px",
+                  fontWeight: 400,
+                  lineHeight: "28px",
+                }}
+              >
+                Vehicle manufacturer
+              </Typography>
+
+              <FormControl
+                fullWidth
+                size='small'
+                sx={{
+                  background: "#F0F0F0",
+                }}
+              >
+                <InputLabel
+                  sx={{
+                    color: "#092C4C",
+                    fontSize: "16px !important",
+                    fontWeight: 400,
+                  }}
+                >
+                  Sinoki Supra
+                </InputLabel>
+                <Select
+                  sx={{
+                    fontSize: "16px !important",
+                    fontWeight: 400,
+                  }}
+                  value={sinoki}
+                  label='Sinoki Supra'
+                  onChange={handleChange}
+                >
+                  <MenuItem sx={{ fontSize: "16px !important", py: 0 }} value={"Sinoki"}>
+                    Sinoki
+                  </MenuItem>
+                  <MenuItem sx={{ fontSize: "16px !important", py: 0 }} value={"Sinoki 2"}>
+                    Sinoki 2
+                  </MenuItem>
+                  <MenuItem sx={{ fontSize: "16px !important", py: 0 }} value={"Sinoki 3"}>
+                    Sinoki 3
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 1.8,
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Typography
+                variant='p'
+                sx={{
+                  fontSize: "20px",
+                  fontWeight: 400,
+                  lineHeight: "28px",
+                }}
+              >
+                Vehicle year
+              </Typography>
+
+              <FormControl
+                fullWidth
+                size='small'
+                sx={{
+                  background: "#F0F0F0",
+                }}
+              >
+                <InputLabel
+                  sx={{
+                    color: "#092C4C",
+                    fontSize: "16px !important",
+                    fontWeight: 400,
+                  }}
+                >
+                  2016
+                </InputLabel>
+                <Select
+                  sx={{
+                    fontSize: "16px !important",
+                    fontWeight: 400,
+                  }}
+                  value={sinoki}
+                  label='2016'
+                  onChange={handleChange}
+                >
+                  <MenuItem sx={{ fontSize: "16px !important", py: 0 }} value={"Sinoki"}>
+                    Sinoki
+                  </MenuItem>
+                  <MenuItem sx={{ fontSize: "16px !important", py: 0 }} value={"Sinoki 2"}>
+                    Sinoki 2
+                  </MenuItem>
+                  <MenuItem sx={{ fontSize: "16px !important", py: 0 }} value={"Sinoki 3"}>
+                    Sinoki 3
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 1.8,
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Typography
+                variant='p'
+                sx={{
+                  fontSize: "20px",
+                  fontWeight: 400,
+                  lineHeight: "28px",
+                }}
+              >
+                License plate
+              </Typography>
+
+              <TextField
+                hiddenLabel
+                size='small'
+                defaultValue='e.g BUS123ZY'
+                InputProps={{
+                  style: {
+                    fontSize: "18px",
+                    fontWeight: 400,
+                    color: "#092C4C",
+                    border: "1px solid #092C4C",
+                  },
+                }}
+                variant='outlined'
+              />
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 1.8,
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Typography
+                variant='p'
+                sx={{
+                  fontSize: "20px",
+                  fontWeight: 400,
+                  lineHeight: "28px",
+                }}
+              >
+                Vehicle color
+              </Typography>
+
+              <FormControl
+                fullWidth
+                size='small'
+                sx={{
+                  background: "#F0F0F0",
+                }}
+              >
+                <InputLabel
+                  sx={{
+                    color: "#092C4C",
+                    fontSize: "16px !important",
+                    fontWeight: 400,
+                  }}
+                >
+                  Red
+                </InputLabel>
+                <Select
+                  sx={{
+                    fontSize: "16px !important",
+                    fontWeight: 400,
+                  }}
+                  value={sinoki}
+                  label='2016'
+                  onChange={handleChange}
+                >
+                  <MenuItem sx={{ fontSize: "16px !important", py: 0 }} value={"Sinoki"}>
+                    Sinoki
+                  </MenuItem>
+                  <MenuItem sx={{ fontSize: "16px !important", py: 0 }} value={"Sinoki 2"}>
+                    Sinoki 2
+                  </MenuItem>
+                  <MenuItem sx={{ fontSize: "16px !important", py: 0 }} value={"Sinoki 3"}>
+                    Sinoki 3
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+          </Stack>
+
+          {/* Continue button */}
+          <Stack
+            sx={{
+              width: "100%",
+              alignItems: "center",
+              mt: { xs: 6, sm: 8, md: 10 },
+              mb: { xs: 20, md: 25 },
+            }}
+          >
+            <Button
+              onClick={() => handleNext()}
+              variant='contained'
+              disableElevation
+              sx={{
+                width: { xs: "90%", sm: "75%", md: "62%" },
+                fontSize: "20px",
+                fontWeight: "700",
+                lineHeight: "28px",
+                textTransform: "none",
+                padding: "16px 0",
+              }}
+            >
+              Continue
+            </Button>
+          </Stack>
+        </Container>
+      ) : activeStep === 2 ? (
+        // Private & licensing step section
+        <Container>
+          {/* Main text */}
+          <Container
+            sx={{
+              width: { xs: "100%", sm: "85%", md: "69%" },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 2,
+              mt: { xs: 8, sm: 12, md: 16 },
+            }}
+          >
+            <Typography
+              variant='h4'
+              color={"#092C4C"}
+              sx={{
+                fontSize: { xs: "30px", md: "48px" },
+                fontWeight: "700",
+                lineHeight: "52.8px",
+              }}
+            >
+              Private & licensing Information
+            </Typography>
+
+            <Typography
+              variant='p'
+              color={"#092C4C"}
+              sx={{
+                fontSize: "20px",
+                fontWeight: "400",
+                lineHeight: "28px",
+                width: { md: "75%" },
+                textAlign: { xs: "left", sm: "center" },
+              }}
+            >
+              We keep your national identification and license information private.
+            </Typography>
+          </Container>
+
+          {/* Input field */}
+          <Stack
+            spacing={{ xs: 2, md: 4 }}
+            sx={{ mt: { xs: 6, sm: 9, md: 12 }, width: "100%", alignItems: "center" }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 1.8,
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Typography
+                variant='p'
+                sx={{
+                  fontSize: "20px",
+                  fontWeight: 400,
+                  lineHeight: "28px",
+                }}
+              >
+                Driver's license or JTB form number
+              </Typography>
+
+              <TextField
+                hiddenLabel
+                defaultValue='e.g BUS123ZY'
+                InputProps={{
+                  style: {
+                    fontSize: "18px",
+                    fontWeight: 400,
+                    color: "#092C4C",
+                    border: "1px solid #092C4C",
+                  },
+                }}
+                variant='outlined'
+              />
+
+              <Typography
+                variant='p'
+                sx={{
+                  fontSize: "20px",
+                  fontWeight: 400,
+                  color: "#828282",
+                  lineHeight: "28px",
+                }}
+              >
+                License number on your driver's document
+              </Typography>
+            </Box>
+          </Stack>
+
+          {/* Continue button */}
+          <Stack
+            sx={{
+              width: "100%",
+              alignItems: "center",
+              mt: { xs: 8, sm: 10, md: 12 },
+              mb: { xs: 20, md: 25 },
+            }}
+          >
+            <Button
+              onClick={() => handleNext()}
+              variant='contained'
+              disableElevation
+              sx={{
+                width: { xs: "90%", sm: "75%", md: "62%" },
+                fontSize: "20px",
+                fontWeight: "700",
+                lineHeight: "28px",
+                textTransform: "none",
+                padding: "16px 0",
+              }}
+            >
+              Continue
+            </Button>
+          </Stack>
+        </Container>
+      ) : activeStep === 3 ? (
+        // Documents step section
+        <Container>
+          {/* Main text */}
+          <Container
+            sx={{
+              width: { xs: "100%", sm: "85%", md: "69%" },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 2,
+              mt: { xs: 8, sm: 12, md: 16 },
+            }}
+          >
+            <Typography
+              variant='h4'
+              color={"#092C4C"}
+              sx={{
+                fontSize: { xs: "30px", md: "48px" },
+                fontWeight: "700",
+                lineHeight: "52.8px",
+              }}
+            >
+              Documents
+            </Typography>
+
+            <Typography
+              variant='p'
+              color={"#092C4C"}
+              sx={{
+                fontSize: "20px",
+                fontWeight: "400",
+                lineHeight: "28px",
+                textAlign: { xs: "left", sm: "center" },
+              }}
+            >
+              We must request certain documents from you as part of the sign-up process for becoming
+              a Fleet Owner, in accordance with legal requirements.
+            </Typography>
+          </Container>
+
+          {/* Input fields */}
+          <Stack
+            spacing={{ xs: 4, md: 6 }}
+            sx={{ mt: { xs: 6, sm: 9, md: 12 }, width: "100%", alignItems: "center" }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography variant='p' gutterBottom>
+                  Driver's License
+                </Typography>
+
+                <Typography variant='p' gutterBottom sx={{ fontSize: "14px", color: "#EB5757" }}>
+                  Required*
+                </Typography>
+              </Box>
+
+              <Box
+                sx={{
+                  position: "relative",
+                  padding: "5px 5px 5px 20px",
+                  border: "0.85px solid #BDBDBD",
+                  borderRadius: "3px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <label
+                  htmlFor='file'
+                  style={{
+                    display: "inline-block",
+                    color: "#828282",
+                    fontSize: "13.596px",
+                  }}
+                >
+                  Select File
+                </label>
+                <input type='file' id='file' name='file' />
+                <button id='btn1'>Browse</button>
+              </Box>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography variant='p' gutterBottom>
+                  DSpatcher's profile photo
+                </Typography>
+
+                <Typography variant='p' gutterBottom sx={{ fontSize: "14px", color: "#EB5757" }}>
+                  Required*
+                </Typography>
+              </Box>
+
+              <Box
+                sx={{
+                  position: "relative",
+                  padding: "5px 5px 5px 20px",
+                  border: "0.85px solid #BDBDBD",
+                  borderRadius: "3px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <label
+                  htmlFor='file'
+                  style={{
+                    display: "inline-block",
+                    color: "#828282",
+                    fontSize: "13.596px",
+                  }}
+                >
+                  Select File
+                </label>
+                <input type='file' id='file' name='file' />
+                <button id='btn1'>Browse</button>
+              </Box>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Typography variant='p' gutterBottom>
+                Front of the Vehicle
+              </Typography>
+
+              <Box
+                sx={{
+                  position: "relative",
+                  border: "0.85px solid #BDBDBD",
+                  borderRadius: "3px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <label
+                  htmlFor='file'
+                  style={{
+                    color: "#FFF",
+                    background: "#092C4C",
+                    borderRadius: "3px 0px 0px 3px",
+                    width: "212.435px",
+                    height: "47.875px",
+                    alignItems: "center",
+                    display: "flex",
+                    gap: "6px",
+                    paddingLeft: 20,
+                  }}
+                >
+                  <img src={FileFill} alt='File icon' />
+                  <Typography
+                    variant='p'
+                    sx={{
+                      fontSize: "13.596px",
+                      fontWeight: 700,
+                      lineHeight: "19.034px",
+                    }}
+                  >
+                    Sample.jpg
+                  </Typography>
+                </label>
+                <input type='file' id='file' name='file' />
+                <Done
+                  sx={{
+                    background: "#092C4C",
+                    color: "#fff",
+                    display: "flex",
+                    borderRadius: "50%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: "3px",
+                    width: "27.192px",
+                    height: "27.192px",
+                    marginRight: { xs: "20px", md: "35px" },
+                  }}
+                />
+              </Box>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Typography variant='p' gutterBottom>
+                Back of the Vehicle
+              </Typography>
+
+              <Box
+                sx={{
+                  position: "relative",
+                  border: "0.85px solid #BDBDBD",
+                  borderRadius: "3px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <label
+                  htmlFor='file'
+                  style={{
+                    color: "#FFF",
+                    background: "#092C4C",
+                    borderRadius: "3px 0px 0px 3px",
+                    width: "212.435px",
+                    height: "47.875px",
+                    alignItems: "center",
+                    display: "flex",
+                    gap: "6px",
+                    paddingLeft: 20,
+                  }}
+                >
+                  <img src={FileFill} alt='File icon' />
+                  <Typography
+                    variant='p'
+                    sx={{
+                      fontSize: "13.596px",
+                      fontWeight: 700,
+                      lineHeight: "19.034px",
+                    }}
+                  >
+                    Sample.jpg
+                  </Typography>
+                </label>
+                <input type='file' id='file' name='file' />
+                <Done
+                  sx={{
+                    background: "#092C4C",
+                    color: "#fff",
+                    display: "flex",
+                    borderRadius: "50%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: "3px",
+                    width: "27.192px",
+                    height: "27.192px",
+                    marginRight: { xs: "20px", md: "35px" },
+                  }}
+                />
+              </Box>
+            </Box>
+
+            <Stack
+              spacing={1.2}
+              sx={{
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Card
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 0.7,
+                }}
+                elevation={0}
+              >
+                <Typography
+                  variant='p'
+                  sx={{
+                    fontWeight: "400",
+                    fontSize: "16px",
+                    color: "#092C4C",
+                  }}
+                >
+                  Vehicle license
+                </Typography>
+              </Card>
+
+              <Box
+                sx={{
+                  position: "relative",
+                  border: "0.85px solid #BDBDBD",
+                  borderRadius: "3px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <label
+                  htmlFor='file'
+                  style={{
+                    color: "#092C4C",
+                    width: "212.435px",
+                    height: "47.875px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    paddingLeft: 20,
+                  }}
+                >
+                  <img src={FileFillDark} alt='File icon' />
+                  <Typography
+                    variant='p'
+                    sx={{
+                      fontSize: "16px",
+                      fontWeight: 700,
+                      lineHeight: "22.4px",
+                    }}
+                  >
+                    Sample.jpg
+                  </Typography>
+                </label>
+                <input type='file' id='file' name='file' />
+                <Done
+                  sx={{
+                    background: "#092C4C",
+                    color: "#fff",
+                    display: "flex",
+                    borderRadius: "50%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: "3px",
+                    width: "27.192px",
+                    height: "27.192px",
+                    marginRight: { xs: "20px", md: "35px" },
+                  }}
+                />
+              </Box>
+            </Stack>
+
+            <Stack
+              spacing={1.2}
+              sx={{
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Card
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 0.2,
+                }}
+                elevation={0}
+              >
+                <Typography
+                  variant='p'
+                  sx={{
+                    fontWeight: "400",
+                    fontSize: "16px",
+                    color: "#092C4C",
+                  }}
+                >
+                  LASRRA card
+                </Typography>
+                <Typography
+                  variant='p'
+                  sx={{
+                    fontWeight: "400",
+                    fontSize: "16px",
+                    color: "#092C4C",
+                  }}
+                >
+                  Resident Card issued by the Lagos State Resident Registration Agency
+                </Typography>
+                <Typography
+                  variant='p'
+                  sx={{
+                    fontWeight: "400",
+                    fontSize: "16px",
+                    color: "#092C4C",
+                  }}
+                >
+                  Visit{" "}
+                  <Link to='' style={{ color: "#EB5757" }}>
+                    Lagos State Resident Registration Agency
+                  </Link>
+                </Typography>
+              </Card>
+
+              <Box
+                sx={{
+                  position: "relative",
+                  border: "0.85px solid #BDBDBD",
+                  borderRadius: "3px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <label
+                  htmlFor='file'
+                  style={{
+                    color: "#092C4C",
+                    width: "212.435px",
+                    height: "47.875px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    paddingLeft: 20,
+                  }}
+                >
+                  <img src={FileFillDark} alt='File icon' />
+                  <Typography
+                    variant='p'
+                    sx={{
+                      fontSize: "16px",
+                      fontWeight: 700,
+                      lineHeight: "22.4px",
+                    }}
+                  >
+                    Sample.jpg
+                  </Typography>
+                </label>
+                <input type='file' id='file' name='file' />
+                <Done
+                  sx={{
+                    background: "#092C4C",
+                    color: "#fff",
+                    display: "flex",
+                    borderRadius: "50%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: "3px",
+                    width: "27.192px",
+                    height: "27.192px",
+                    marginRight: { xs: "20px", md: "35px" },
+                  }}
+                />
+              </Box>
+            </Stack>
+
+            <Stack
+              spacing={1.2}
+              sx={{
+                width: { xs: "90%", sm: "75%", md: "62%" },
+              }}
+            >
+              <Card
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 0.2,
+                }}
+                elevation={0}
+              >
+                <Typography
+                  variant='p'
+                  sx={{
+                    fontWeight: "400",
+                    fontSize: "16px",
+                    color: "#092C4C",
+                  }}
+                >
+                  LASDRI card
+                </Typography>
+                <Typography
+                  variant='p'
+                  sx={{
+                    fontWeight: "400",
+                    fontSize: "16px",
+                    color: "#092C4C",
+                  }}
+                >
+                  Lagos Drivers institute ReCertification Card Visit{" "}
+                  <Link to='' style={{ color: "#EB5757" }}>
+                    Lagos State Drivers Institute
+                  </Link>
+                </Typography>
+              </Card>
+
+              <Box
+                sx={{
+                  position: "relative",
+                  border: "0.85px solid #BDBDBD",
+                  borderRadius: "3px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <label
+                  htmlFor='file'
+                  style={{
+                    color: "#092C4C",
+                    width: "212.435px",
+                    height: "47.875px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    paddingLeft: 20,
+                  }}
+                >
+                  <img src={FileFillDark} alt='File icon' />
+                  <Typography
+                    variant='p'
+                    sx={{
+                      fontSize: "16px",
+                      fontWeight: 700,
+                      lineHeight: "22.4px",
+                    }}
+                  >
+                    Sample.jpg
+                  </Typography>
+                </label>
+                <input type='file' id='file' name='file' />
+                <Done
+                  sx={{
+                    background: "#092C4C",
+                    color: "#fff",
+                    display: "flex",
+                    borderRadius: "50%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: "3px",
+                    width: "27.192px",
+                    height: "27.192px",
+                    marginRight: { xs: "20px", md: "35px" },
+                  }}
+                />
+              </Box>
+            </Stack>
+          </Stack>
+
+          {/* Continue button */}
+          <Stack
+            sx={{
+              width: "100%",
+              alignItems: "center",
+              mt: { xs: 6, sm: 8, md: 10 },
+              mb: { xs: 20, md: 25 },
+            }}
+          >
+            <Button
+              onClick={() => handleNext()}
+              variant='contained'
+              disableElevation
+              sx={{
+                width: { xs: "90%", sm: "75%", md: "62%" },
+                fontSize: "20px",
+                fontWeight: "700",
+                lineHeight: "28px",
+                textTransform: "none",
+                padding: "16px 0",
+              }}
+            >
+              Continue
+            </Button>
+          </Stack>
+        </Container>
+      ) : activeStep === 4 || activeStep === 5 ? (
+        // Payment step section
+        <Container>
+          {/* Main text */}
+          <Container
+            sx={{
+              width: { xs: "100%", sm: "85%", md: "69%" },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 2,
+              mt: { xs: 8, sm: 12, md: 16 },
+            }}
+          >
+            <Typography
+              variant='h4'
+              color={"#092C4C"}
+              sx={{
+                fontSize: { xs: "30px", md: "48px" },
+                fontWeight: "700",
+                lineHeight: "52.8px",
+              }}
+            >
+              Payment Details
+            </Typography>
+
+            <Typography
+              variant='p'
+              color={"#092C4C"}
+              sx={{
+                fontSize: "20px",
+                fontWeight: "400",
+                lineHeight: "28px",
+                textAlign: "center",
+              }}
+            >
+              We must request certain documents from you as part of the sign-up process for becoming
+              a Fleet Owner, in accordance with legal requirements.
+            </Typography>
+          </Container>
+
+          {/* Continue button */}
+          <Stack
+            sx={{
+              width: "100%",
+              alignItems: "center",
+              mt: { xs: 50, sm: 75, md: 90 },
+              mb: { xs: 20, md: 25 },
+            }}
+          >
+            <Button
+              onClick={() => {
+                if (activeStep !== steps.length) {
+                  handleNext();
+                }
+              }}
+              variant='contained'
+              disableElevation
+              sx={{
+                width: { xs: "90%", sm: "75%", md: "62%" },
+                marginBlock: "50px",
+                fontSize: "20px",
+                fontWeight: "700",
+                lineHeight: "28px",
+                textTransform: "none",
+                padding: "16px 0",
+              }}
+            >
+              Continue
+            </Button>
+          </Stack>
+        </Container>
+      ) : null}
     </ThemeProvider>
   );
 };

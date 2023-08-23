@@ -937,8 +937,8 @@ const FleetOwnersSignUp = () => {
             </Button>
           </Stack>
         </Container>
-      ) : (
-        // Payment Details step section
+      ) : activeStep === 2 || activeStep === 3 ? (
+        // Payment step section
         <Container>
           {/* Main text */}
           <Container
@@ -989,6 +989,11 @@ const FleetOwnersSignUp = () => {
             }}
           >
             <Button
+              onClick={() => {
+                if (activeStep !== steps.length) {
+                  handleNext();
+                }
+              }}
               variant='contained'
               disableElevation
               sx={{
@@ -1005,7 +1010,7 @@ const FleetOwnersSignUp = () => {
             </Button>
           </Stack>
         </Container>
-      )}
+      ) : null}
     </ThemeProvider>
   );
 };
