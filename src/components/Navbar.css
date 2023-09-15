@@ -1,0 +1,5 @@
+@media screen and (min-width: 1200px) and (max-width: 1366px) {
+  #appbar {
+    padding-inline: 120px;
+  }
+}

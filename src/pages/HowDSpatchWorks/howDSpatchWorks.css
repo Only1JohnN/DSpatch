@@ -1,0 +1,27 @@
+#stepperImage {
+  height: 1990px;
+}
+
+@media screen and (max-width: 1200px) {
+  #stepperImage {
+    height: 1430px;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  #stepperImage {
+    height: 1500px;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  #stepperImage {
+    height: 950px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  #stepperImage {
+    height: 540px;
+  }
+}
