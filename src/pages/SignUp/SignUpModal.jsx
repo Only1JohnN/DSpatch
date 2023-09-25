@@ -78,9 +78,9 @@ const SignUpModal = () => {
           backdropFilter: "blur(5px)",
 
           "& .MuiDialog-paper": {
-            py: { xs: 7, md: "88px" },
+            py: { xs: 2, md: "40px" },
             px: { xs: 2, md: "40px" },
-            minWidth: "80vw",
+            // minWidth: "80vw",
             // height: "50vh",
             justifyContent: "center",
           },

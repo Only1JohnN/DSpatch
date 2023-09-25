@@ -7,10 +7,9 @@ import { StepperLine } from "../../assets";
 
 import Grid from "@mui/material/Unstable_Grid2";
 import { ThemeProvider } from "@mui/material/styles";
-// import { withStyles } from "@mui/styles";
 
 import theme from "../../assets/theme";
-// import { useStyles } from "./styles";
+import "./howDSpatchWorks.css";
 
 const loopMe = [0, 1, 2, 3, 4, 5];
 
@@ -59,7 +58,7 @@ const HowDispatchWorks = () => {
           my: 15,
           py: 10,
           mb: 30,
-          px: { xs: 1, md: 18 },
+          px: { xs: 2, md: 18 },
         }}
       >
         <Box
@@ -76,7 +75,7 @@ const HowDispatchWorks = () => {
             sx={{
               fontSize: { xs: "30px", md: "48px" },
               fontWeight: "700",
-              lineHeight: "52.8px",
+              lineHeight: { md: "52.8px" },
             }}
           >
             How to use the DSpatch app
@@ -97,14 +96,18 @@ const HowDispatchWorks = () => {
           </Typography>
         </Box>
 
-        <Stack direction={"row"} spacing={{ xs: 4, sm: 8, md: 16 }} sx={{ my: 12, width: "100%" }}>
+        <Stack
+          direction={"row"}
+          spacing={{ xs: 5, sm: 8, md: 30 }}
+          sx={{ my: 12, width: "100%", justifyContent: { xs: "center", md: "left" } }}
+        >
           <Grid container direction={"column"} rowSpacing={{ xs: 3, sm: 6, md: 12 }} sx={{ py: 7 }}>
             {loopMe.map((_, index) => (
               <Grid xs key={index}>
                 <Box
                   sx={{
-                    height: { xs: "214px", md: "300px" },
-                    width: { xs: "314px", md: "400px" },
+                    height: { xs: "100px", sm: "150px", md: "200px", lg: "300px" },
+                    width: { xs: "150px", sm: "220px", md: "300px", lg: "400px" },
                     position: "relative",
                   }}
                 >
@@ -121,14 +124,14 @@ const HowDispatchWorks = () => {
                   ></Box>
 
                   <Typography
-                    variant='h1'
+                    variant={"h1"}
                     color='#E7E8ED'
                     sx={{
                       position: "absolute",
-                      top: -78,
-                      left: 367,
-                      fontSize: "190px",
-                      fontWeight: "600",
+                      top: { xs: -25, sm: -40, md: -60, lg: -78 },
+                      left: { xs: 139, sm: 202, md: 275, lg: 367 },
+                      fontSize: { xs: "65px", sm: "100px", md: "140px", lg: "190px" },
+                      fontWeight: { xs: 450, sm: 500, md: 600 },
                       zIndex: -1,
                     }}
                   >
@@ -150,13 +153,13 @@ const HowDispatchWorks = () => {
               src={StepperLine}
               alt='Stepper line'
               style={{
-                height: "1990px",
                 position: "absolute",
                 top: 157,
               }}
+              id='stepperImage'
             />
 
-            <Grid container direction={"column"} rowSpacing={{ xs: 3, sm: 6, md: 12 }}>
+            <Grid container direction={"column"} py={{ xs: 8, sm: 8, md: 0 }}>
               {steps.map((step, index) => (
                 <Grid
                   xs
@@ -164,32 +167,31 @@ const HowDispatchWorks = () => {
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: 1,
+                    gap: { xs: 0.5, sm: 1 },
                     justifyContent: "center",
-                    height: { xs: "214px", md: "300px" },
-                    width: { xs: "400px", md: "505px" },
+                    width: { xs: "200px", sm: "250px", md: "inherit" },
                   }}
                 >
                   <Typography
                     variant='h4'
-                    mb={1.5}
+                    mb={{ md: 1.5 }}
                     color='#092C4C'
                     sx={{
-                      fontSize: "40px",
-                      fontWeight: 700,
-                      lineHeight: "44px",
+                      fontSize: { xs: "15px", sm: "20px", md: "30px", lg: "40px" },
+                      fontWeight: { xs: 600, sm: 600, md: 700 },
+                      lineHeight: { md: "44px" },
                     }}
                   >
                     {step.label}
                   </Typography>
                   <Typography
                     variant='subtitle2'
-                    mb={{ xs: 4, md: 0 }}
+                    mb={{ md: 0 }}
                     color='#092C4C'
                     sx={{
-                      fontSize: "16px",
+                      fontSize: { xs: "10px", sm: "13px", md: "16px" },
                       fontWeight: 400,
-                      lineHeight: "22.4px",
+                      lineHeight: { xs: "12px", md: "22.4px" },
                     }}
                   >
                     {step.description}

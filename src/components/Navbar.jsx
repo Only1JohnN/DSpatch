@@ -22,6 +22,8 @@ import { ArrowDropDown, ExpandLess, ExpandMore, Menu as MenuIcon } from "@mui/ic
 import { ThemeProvider } from "@mui/material/styles";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 
+import "./Navbar.css";
+
 // React-Router-Dom
 import { Link as RouterLink } from "react-router-dom";
 
@@ -254,10 +256,11 @@ const Navbar = (props) => {
             height: "87px",
             color: "#092C4C",
             backgroundColor: "#ffffff",
-            px: { xs: 0.5, md: 15 },
+            px: { xs: 0.5, sm: 5, lg: "135px" },
             py: 1,
-            alignItems: "center",
+            // alignItems: "center",
           }}
+          id='appbar'
           position='fixed'
           elevation={trigger ? 4 : 0}
         >
