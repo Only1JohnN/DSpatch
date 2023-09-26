@@ -71,8 +71,8 @@ const Landing = () => {
           <Grid xs sx={{ backgroundColor: "#092C4C", alignItems: "center", display: "flex" }}>
             <Container
               sx={{
-                mx: { xs: 7, md: 13 },
-                pt: { xs: 3, md: 0 },
+                mx: { md: 13 },
+                pt: { md: 0 },
                 mt: { xs: 10, md: 20 },
                 mb: { xs: 13, md: 26 },
               }}
@@ -90,9 +90,9 @@ const Landing = () => {
                 color='#ffffff'
                 mb={{ xs: 3, md: 10 }}
                 sx={{
-                  marginBottom: "72px",
-                  lineHeight: "23px",
-                  fontSize: "16px",
+                  marginBottom: "72px !important",
+                  lineHeight: "23px !important",
+                  fontSize: "16px !important",
                   width: { md: "512px" },
                 }}
               >
@@ -100,7 +100,12 @@ const Landing = () => {
                 our quality drivers registered to the platform, your goods are in safe hands.
               </Typography>
 
-              <Typography variant='body1' color='#ffffff' mb={1} sx={{ fontSize: "18px" }}>
+              <Typography
+                variant='body1'
+                color='#ffffff'
+                mb={1}
+                sx={{ fontSize: "18px !important" }}
+              >
                 Download the DSpatch app
               </Typography>
 
@@ -390,7 +395,7 @@ const Landing = () => {
                     fontSize: "14px",
                   }}
                 >
-                  Sign Up to get started
+                  Get started
                 </Button>
               </Grid>
             </Grid>
